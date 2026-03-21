@@ -1,0 +1,16 @@
+{
+  "cur": {
+    "vip": [
+      { "id": "com.manushart.knightlegion.curvip04", "amount": 275000 },
+      { "id": "com.manushart.knightlegion.curvip03", "amount": 125000 },
+      { "id": "com.manushart.knightlegion.curvip02", "amount": 75000 },
+      { "id": "com.manushart.knightlegion.curvip01", "amount": 30000 }
+    ],
+    "bas": [
+      { "id": "com.manushart.knightlegion.curbase04", "amount": 1800000000 },
+      { "id": "com.manushart.knightlegion.curbase03", "amount": 800000000 },
+      { "id": "com.manushart.knightlegion.curbase02", "amount": 350000000 },
+      { "id": "com.manushart.knightlegion.curbase01", "amount": 150000000 }
+    ]
+  }
+}
