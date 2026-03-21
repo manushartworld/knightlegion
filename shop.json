@@ -3,8 +3,8 @@
     "vip": [
       { "id": "com.manushart.knightlegion.curvip04", "amount": 275000 },
       { "id": "com.manushart.knightlegion.curvip03", "amount": 125000 },
-      { "id": "com.manushart.knightlegion.curvip03", "amount": 75000 },
-      { "id": "com.manushart.knightlegion.curvip03", "amount": 30000 }
+      { "id": "com.manushart.knightlegion.curvip02", "amount": 75000 },
+      { "id": "com.manushart.knightlegion.curvip01", "amount": 30000 }
     ],
     "bas": [
       { "id": "com.manushart.knightlegion.curbase04", "amount": 1800000000 },
