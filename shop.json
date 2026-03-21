@@ -6,7 +6,7 @@
       { "id": "com.manushart.knightlegion.curvip03", "amount": 75000 },
       { "id": "com.manushart.knightlegion.curvip03", "amount": 30000 },
     ],
-    "base": [
+    "bas": [
       { "id": "com.manushart.knightlegion.curbase04", "amount": 1800000000 },
       { "id": "com.manushart.knightlegion.curbase03", "amount": 800000000 },
       { "id": "com.manushart.knightlegion.curbase02", "amount": 350000000 },
