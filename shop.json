@@ -2,46 +2,46 @@
   "datas": [
     {
       "id": "com.manushart.knightlegion.curvip04", 
-      "curVip": 50000, "curBas": 0,
+      "set": 0, "curVip": 50000, "curBas": 0,
       "items": []
     },
     {
       "id": "com.manushart.knightlegion.curvip03", 
-      "curVip": 20000, "curBas": 0,
+      "set": 0, "curVip": 20000, "curBas": 0,
       "items": []
     },
     {
       "id": "com.manushart.knightlegion.curvip02", 
-      "curVip": 8000, "curBas": 0,
+      "set": 0, "curVip": 8000, "curBas": 0,
       "items": []
     },
     {
       "id": "com.manushart.knightlegion.curvip01", 
-      "curVip": 3000, "curBas": 0,
+      "set": 0, "curVip": 3000, "curBas": 0,
       "items": []
     },
     {
       "id": "com.manushart.knightlegion.curbas04", 
-      "curVip": 0, "curBas": 250000000,
+      "set": 1, "curVip": 0, "curBas": 250000000,
       "items": []
     },
     {
       "id": "com.manushart.knightlegion.curbas03", 
-      "curVip": 0, "curBas": 100000000,
+      "set": 1, "curVip": 0, "curBas": 100000000,
       "items": []
     },
     {
       "id": "com.manushart.knightlegion.curbas02", 
-      "curVip": 0, "curBas": 40000000,
+      "set": 1, "curVip": 0, "curBas": 40000000,
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.curbas04", 
-      "curVip": 0, "curBas": 15000000,
+      "id": "com.manushart.knightlegion.curbas01", 
+      "set": 1, "curVip": 0, "curBas": 15000000,
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.pr01", "curVip": 0, "curBas": 0,
+      "id": "com.manushart.knightlegion.pr01", "set": 2, "curVip": 0, "curBas": 0,
       "items": [
         {
           "id": 618,
@@ -72,7 +72,7 @@
     },
     
     {
-      "id": "com.manushart.knightlegion.pr02", "curVip": 0, "curBas": 0,
+      "id": "com.manushart.knightlegion.pr02", "set": 3, "curVip": 0, "curBas": 0,
       "items": [
         {
           "id": 487,
@@ -112,7 +112,7 @@
       ]
     },
     {
-      "id": "com.manushart.knightlegion.pr03", "curVip": 0, "curBas": 0,
+      "id": "com.manushart.knightlegion.pr03", "set": 4, "curVip": 0, "curBas": 0,
       "items": [
         {
           "id": 541,
