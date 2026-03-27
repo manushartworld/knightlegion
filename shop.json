@@ -1,31 +1,138 @@
 {
   "datas": [
     {
-      "id": "premium_box_v1", "curVip": 2500, "curBas": 500,
+      "id": "com.manushart.knightlegion.curvip04", 
+      "curVip": 50000, "curBas": 0,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curvip03", 
+      "curVip": 20000, "curBas": 0,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curvip02", 
+      "curVip": 8000, "curBas": 0,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curvip01", 
+      "curVip": 3000, "curBas": 0,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curbas04", 
+      "curVip": 0, "curBas": 250000000,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curbas03", 
+      "curVip": 0, "curBas": 100000000,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curbas02", 
+      "curVip": 0, "curBas": 40000000,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curbas04", 
+      "curVip": 0, "curBas": 15000000,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.pr01", "curVip": 0, "curBas": 0,
       "items": [
         {
-          "id": 1001,
-          "amount": 1,
-          "enchantLevel": 10
+          "id": 618,
+          "amount": 5,
+          "enchantLevel": 0
         },
         {
-          "slot": 2,
-          "id": 2005,
-          "amount": 50,
+          "id": 617,
+          "amount": 10,
+          "enchantLevel": 0
+        },
+        {
+          "id": 616,
+          "amount": 20,
+          "enchantLevel": 0
+        },
+        {
+          "id": 255,
+          "amount": 25,
+          "enchantLevel": 0
+        },
+        {
+          "id": 254,
+          "amount": 30,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    
+    {
+      "id": "com.manushart.knightlegion.pr02", "curVip": 0, "curBas": 0,
+      "items": [
+        {
+          "id": 487,
+          "amount": 30,
+          "enchantLevel": 0
+        },
+        {
+          "id": 504,
+          "amount": 30,
+          "enchantLevel": 0
+        },
+        {
+          "id": 481,
+          "amount": 30,
+          "enchantLevel": 0
+        },
+        {
+          "id": 489,
+          "amount": 15,
+          "enchantLevel": 0
+        },
+        {
+          "id": 424,
+          "amount": 15,
+          "enchantLevel": 0
+        },
+        {
+          "id": 511,
+          "amount": 15,
+          "enchantLevel": 0
+        },
+        {
+          "id": 611,
+          "amount": 15,
           "enchantLevel": 0
         }
       ]
     },
     {
-      "id": "daily_gift_05",
-      "curVip": 0,
-      "curBas": 100,
+      "id": "com.manushart.knightlegion.pr03", "curVip": 0, "curBas": 0,
       "items": [
         {
-          "slot": 0,
-          "id": 55,
-          "amount": 5,
-          "enchantLevel": 1
+          "id": 541,
+          "amount": 400,
+          "enchantLevel": 0
+        },
+        {
+          "id": 539,
+          "amount": 300,
+          "enchantLevel": 0
+        },
+        {
+          "id": 519,
+          "amount": 200,
+          "enchantLevel": 0
+        },
+        {
+          "id": 420,
+          "amount": 200,
+          "enchantLevel": 0
         }
       ]
     }
