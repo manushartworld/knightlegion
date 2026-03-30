@@ -72,7 +72,7 @@
     },
     
     {
-      "id": "com.manushart.knightlegion.pr02", "set": 3, "curVip": 0, "curBas": 0,
+      "id": "com.manushart.knightlegion.pr02", "set": 2, "curVip": 0, "curBas": 0,
       "items": [
         {
           "id": 487,
@@ -112,7 +112,7 @@
       ]
     },
     {
-      "id": "com.manushart.knightlegion.pr03", "set": 4, "curVip": 0, "curBas": 0,
+      "id": "com.manushart.knightlegion.pr03", "set": 2, "curVip": 0, "curBas": 0,
       "items": [
         {
           "id": 541,
