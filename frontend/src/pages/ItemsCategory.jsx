@@ -156,7 +156,7 @@ export default function ItemsCategory() {
   }
 
   return (
-    <div data-testid={`items-category-${sub}`} className="px-6 md:px-12 lg:px-16 py-10">
+    <div data-testid={`items-category-${sub}`} className="px-4 sm:px-6 md:px-12 lg:px-16 py-8 sm:py-10 max-w-full overflow-x-hidden">
       <nav className="flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-slate-500 mb-6">
         <Link to="/" className="hover:text-[#D4AF37]">Codex</Link>
         <span>/</span>
@@ -181,9 +181,9 @@ export default function ItemsCategory() {
         </div>
       </div>
 
-      {/* Filters */}
-      <div className="flex flex-wrap gap-3 mb-8">
-        <div className="relative flex-1 min-w-[220px] max-w-md">
+      {/* Filters — full-width search on mobile, scrollable pill bar for selects */}
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-8">
+        <div className="relative w-full sm:flex-1 sm:min-w-[220px] sm:max-w-md">
           <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             data-testid="items-search"
@@ -193,19 +193,21 @@ export default function ItemsCategory() {
             className="w-full bg-[#14090d] border border-[#D4AF37]/30 pl-9 pr-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-[#a83246] focus:outline-none"
           />
         </div>
-        {grades.length > 1 && (
-          <Select testid="items-grade" icon={<Filter size={12} />} value={grade} onChange={(v) => { setGrade(v); setVisible(60); }} options={grades} label="Grade" />
-        )}
-        {types.length > 1 && (
-          <Select testid="items-type" value={type} onChange={(v) => { setType(v); setVisible(60); }} options={types} label="Type" />
-        )}
-        {permits.length > 1 && (
-          <Select testid="items-permit" value={permitted} onChange={(v) => { setPermitted(v); setVisible(60); }} options={permits} label="Class" />
-        )}
+        <div className="flex gap-2 overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0 pb-1 scrollbar-thin">
+          {grades.length > 1 && (
+            <Select testid="items-grade" icon={<Filter size={12} />} value={grade} onChange={(v) => { setGrade(v); setVisible(60); }} options={grades} label="Grade" />
+          )}
+          {types.length > 1 && (
+            <Select testid="items-type" value={type} onChange={(v) => { setType(v); setVisible(60); }} options={types} label="Type" />
+          )}
+          {permits.length > 1 && (
+            <Select testid="items-permit" value={permitted} onChange={(v) => { setPermitted(v); setVisible(60); }} options={permits} label="Class" />
+          )}
+        </div>
       </div>
 
       {loading && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5">
           {Array.from({ length: 8 }).map((_, i) => (
             <RPGFrame key={i} className="h-40 animate-pulse" />
           ))}
@@ -229,7 +231,7 @@ export default function ItemsCategory() {
 
       {!loading && !error && filtered.length > 0 && (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5">
             {filtered.slice(0, visible).map((g, i) => (
               <ItemCard key={`${g.sourceKey}-${g.base.iconName}-${i}`} group={g} onOpen={setOpenGroup} />
             ))}
@@ -251,7 +253,7 @@ export default function ItemsCategory() {
 
 function Select({ value, onChange, options, label, icon, testid }) {
   return (
-    <div className="relative">
+    <div className="relative shrink-0">
       {icon && <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">{icon}</span>}
       <select
         data-testid={testid}

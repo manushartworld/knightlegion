@@ -3,7 +3,8 @@ import { NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { CATEGORIES } from "../lib/categories";
 
-export default function Sidebar({ collapsed, setCollapsed }) {
+// Reusable nav body — used by desktop sidebar AND mobile sheet drawer.
+export function SidebarNav({ collapsed = false, onNavigate }) {
   const location = useLocation();
   const [openGroups, setOpenGroups] = useState(() =>
     Object.fromEntries(CATEGORIES.map((c) => [c.slug, true]))
@@ -11,6 +12,61 @@ export default function Sidebar({ collapsed, setCollapsed }) {
 
   const toggle = (slug) => setOpenGroups((o) => ({ ...o, [slug]: !o[slug] }));
 
+  return (
+    <nav className="flex-1 overflow-y-auto py-4" data-testid="sidebar-nav">
+      {CATEGORIES.map((cat) => {
+        const Icon = cat.icon;
+        const isOpen = openGroups[cat.slug];
+        return (
+          <div key={cat.slug} className="mb-2" data-testid={`sidebar-group-${cat.slug}`}>
+            <button
+              onClick={() => !collapsed && toggle(cat.slug)}
+              className={`w-full flex items-center ${
+                collapsed ? "justify-center" : "justify-between"
+              } px-4 py-2.5 text-xs tracking-[0.3em] uppercase font-heading text-[#D4AF37]/90 hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors`}
+              title={cat.label}
+            >
+              <span className="flex items-center gap-3">
+                <Icon size={16} className="text-[#a83246]" />
+                {!collapsed && <span>{cat.label}</span>}
+              </span>
+              {!collapsed && (isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />)}
+            </button>
+
+            {isOpen && !collapsed && (
+              <div className="pl-4 pr-2 py-1 space-y-1">
+                {cat.children.map((sub) => {
+                  const SubIcon = sub.icon;
+                  const to = `/c/${cat.slug}/${sub.slug}`;
+                  const active = location.pathname === to;
+                  return (
+                    <NavLink
+                      key={sub.slug}
+                      to={to}
+                      onClick={onNavigate}
+                      data-testid={`sidebar-link-${cat.slug}-${sub.slug}`}
+                      className={`sidebar-item flex items-center gap-3 px-3 py-2.5 text-sm border-l-2 ${
+                        active
+                          ? "border-[#D4AF37] bg-[#a83246]/10 text-[#D4AF37]"
+                          : "border-transparent text-slate-400 hover:text-slate-100 hover:border-[#a83246]/70 hover:bg-[#a83246]/5"
+                      }`}
+                    >
+                      <SubIcon size={13} className="opacity-70" />
+                      <span>{sub.label}</span>
+                    </NavLink>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </nav>
+  );
+}
+
+// Desktop sidebar — hidden on < lg.
+export default function Sidebar({ collapsed, setCollapsed }) {
   return (
     <aside
       data-testid="sidebar"
@@ -27,52 +83,7 @@ export default function Sidebar({ collapsed, setCollapsed }) {
         {collapsed ? <ChevronsRight size={14} /> : <ChevronsLeft size={14} />}
       </button>
 
-      <nav className="flex-1 overflow-y-auto py-4">
-        {CATEGORIES.map((cat) => {
-          const Icon = cat.icon;
-          const isOpen = openGroups[cat.slug];
-          return (
-            <div key={cat.slug} className="mb-2" data-testid={`sidebar-group-${cat.slug}`}>
-              <button
-                onClick={() => !collapsed && toggle(cat.slug)}
-                className={`w-full flex items-center ${collapsed ? "justify-center" : "justify-between"} px-4 py-2.5 text-xs tracking-[0.3em] uppercase font-heading text-[#D4AF37]/90 hover:text-[#D4AF37] hover:bg-[#D4AF37]/5 transition-colors`}
-                title={cat.label}
-              >
-                <span className="flex items-center gap-3">
-                  <Icon size={16} className="text-[#a83246]" />
-                  {!collapsed && <span>{cat.label}</span>}
-                </span>
-                {!collapsed && (isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />)}
-              </button>
-
-              {isOpen && !collapsed && (
-                <div className="pl-4 pr-2 py-1 space-y-1">
-                  {cat.children.map((sub) => {
-                    const SubIcon = sub.icon;
-                    const to = `/c/${cat.slug}/${sub.slug}`;
-                    const active = location.pathname === to;
-                    return (
-                      <NavLink
-                        key={sub.slug}
-                        to={to}
-                        data-testid={`sidebar-link-${cat.slug}-${sub.slug}`}
-                        className={`sidebar-item flex items-center gap-3 px-3 py-2 text-sm border-l-2 ${
-                          active
-                            ? "border-[#D4AF37] bg-[#a83246]/10 text-[#D4AF37]"
-                            : "border-transparent text-slate-400 hover:text-slate-100 hover:border-[#a83246]/70 hover:bg-[#a83246]/5"
-                        }`}
-                      >
-                        <SubIcon size={13} className="opacity-70" />
-                        <span>{sub.label}</span>
-                      </NavLink>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </nav>
+      <SidebarNav collapsed={collapsed} />
 
       {!collapsed && (
         <div className="p-4 border-t border-[#D4AF37]/10">

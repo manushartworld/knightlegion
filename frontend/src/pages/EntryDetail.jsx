@@ -56,7 +56,7 @@ export default function EntryDetail() {
   const ytId = getYoutubeId(entry.youtube_url);
 
   return (
-    <div data-testid="entry-detail-page" className="px-6 md:px-12 lg:px-16 py-10">
+    <div data-testid="entry-detail-page" className="px-4 sm:px-6 md:px-12 lg:px-16 py-8 sm:py-10 max-w-full overflow-x-hidden">
       <button
         onClick={() => navigate(-1)}
         className="flex items-center gap-2 text-[11px] tracking-[0.3em] uppercase text-slate-500 hover:text-[#D4AF37] mb-6"

@@ -60,7 +60,7 @@ export default function Category() {
   const isVideos = category === "tutorials" && sub === "videos";
 
   return (
-    <div data-testid={`category-page-${category}-${sub}`} className="px-6 md:px-12 lg:px-16 py-10">
+    <div data-testid={`category-page-${category}-${sub}`} className="px-4 sm:px-6 md:px-12 lg:px-16 py-8 sm:py-10 max-w-full overflow-x-hidden">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-slate-500 mb-6">
         <Link to="/" className="hover:text-[#D4AF37]">Codex</Link>

@@ -25,6 +25,12 @@ body {
     font-family: 'Outfit', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+html, #root {
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 @layer base {
@@ -156,7 +162,10 @@ body {
     background-image: url('https://static.prod-images.emergentagent.com/jobs/4d80fd22-fbc5-408f-a8f7-3c9249d31b3b/images/e238a1866dc017166ea0a76dc7b2bf993fd0df701dae84c94624a7f901d06471.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
+}
+@media (min-width: 1024px) {
+    .hero-cinema { background-attachment: fixed; }
 }
 .hero-cinema::before {
     content: '';
@@ -310,6 +319,12 @@ body {
 
 /* Sidebar collapse */
 .sidebar-item { transition: background 0.3s ease, color 0.3s ease, padding 0.3s ease; }
+
+/* Thin horizontal scroll (filter rows on mobile) */
+.scrollbar-thin::-webkit-scrollbar { height: 4px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: rgba(168, 50, 70, 0.35); }
+.scrollbar-thin::-webkit-scrollbar-thumb:hover { background: rgba(168, 50, 70, 0.6); }
 
 /* Noise overlay */
 .noise-overlay {

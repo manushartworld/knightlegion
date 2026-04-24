@@ -162,24 +162,24 @@ export default function Admin() {
   }
 
   return (
-    <div data-testid="admin-page" className="px-6 md:px-12 lg:px-16 py-10">
-      <div className="flex items-end justify-between mb-8">
+    <div data-testid="admin-page" className="px-4 sm:px-6 md:px-12 lg:px-16 py-8 sm:py-10 max-w-full overflow-x-hidden">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
           <span className="text-[11px] tracking-[0.4em] uppercase text-[#a83246]">Archon Sanctum</span>
-          <h1 className="font-heading text-4xl sm:text-5xl text-slate-100 mt-2">Codex Scriptorium</h1>
-          <p className="text-slate-400 mt-2">Inscribe, amend, or banish entries from the eternal record.</p>
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-slate-100 mt-2">Codex Scriptorium</h1>
+          <p className="text-slate-400 mt-2 text-sm sm:text-base">Inscribe, amend, or banish entries from the eternal record.</p>
         </div>
-        <button onClick={startCreate} data-testid="admin-new-entry" className="rune-btn">
+        <button onClick={startCreate} data-testid="admin-new-entry" className="rune-btn w-full sm:w-auto">
           <Plus size={14} /> New Entry
         </button>
       </div>
 
       {/* Filter */}
-      <div className="mb-6 flex items-center gap-3">
+      <div className="mb-6 flex flex-col sm:flex-row sm:items-center gap-3">
         <select
           value={filterCat}
           onChange={(e) => setFilterCat(e.target.value)}
-          className={`${inputCls} max-w-xs`}
+          className={`${inputCls} w-full sm:max-w-xs`}
           data-testid="admin-filter-cat"
         >
           <option value="">All categories</option>
@@ -306,11 +306,11 @@ export default function Admin() {
             </div>
           </div>
 
-          <div className="flex gap-3 mt-8 pt-6 border-t border-[#D4AF37]/10">
-            <button data-testid="admin-save-btn" onClick={save} disabled={saving} className="rune-btn">
+          <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-[#D4AF37]/10">
+            <button data-testid="admin-save-btn" onClick={save} disabled={saving} className="rune-btn w-full sm:w-auto">
               <Save size={14} /> {saving ? "Sealing…" : editingId ? "Seal Amendment" : "Inscribe"}
             </button>
-            <button onClick={cancel} className="rune-btn ghost">Cancel</button>
+            <button onClick={cancel} className="rune-btn ghost w-full sm:w-auto">Cancel</button>
           </div>
         </RPGFrame>
       )}

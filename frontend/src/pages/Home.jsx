@@ -39,7 +39,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative hero-cinema min-h-[88vh] flex items-center">
         <Embers count={36} />
-        <div className="relative z-10 w-full px-6 md:px-12 lg:px-20 py-24">
+        <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-10 h-[1px] bg-[#D4AF37]" />
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* CATEGORY CARDS */}
-      <section className="px-6 md:px-12 lg:px-20 py-20">
+      <section className="px-4 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-20">
         <div className="ornate-rule mb-10">
           <span className="font-heading text-xs tracking-[0.4em] uppercase">Arcana Index</span>
         </div>
@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* FEATURED HERO */}
-      <section className="px-6 md:px-12 lg:px-20 py-20 bg-gradient-to-b from-[#0b0b10] via-[#14090d] to-[#0b0b10] relative overflow-hidden">
+      <section className="px-4 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-20 bg-gradient-to-b from-[#0b0b10] via-[#14090d] to-[#0b0b10] relative overflow-hidden">
         <div className="absolute inset-0 noise-overlay" />
         <div className="relative">
           <div className="ornate-rule mb-10">
@@ -158,7 +158,7 @@ export default function Home() {
       </section>
 
       {/* VIDEO TUTORIALS */}
-      <section className="px-6 md:px-12 lg:px-20 py-20">
+      <section className="px-4 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-20">
         <div className="ornate-rule mb-10">
           <span className="font-heading text-xs tracking-[0.4em] uppercase">Tome of Moving Pictures</span>
         </div>
@@ -188,7 +188,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="px-6 md:px-12 lg:px-20 py-10 border-t border-[#D4AF37]/10 mt-10">
+      <footer className="px-4 sm:px-6 md:px-12 lg:px-20 py-8 sm:py-10 border-t border-[#D4AF37]/10 mt-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="text-[10px] tracking-[0.4em] uppercase text-slate-600">
             ◆ Aethryl Codex · Chronicles of the Eternal Realm ◆

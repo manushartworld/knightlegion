@@ -178,12 +178,12 @@ export default function DataSourcesPanel() {
         </div>
       </div>
 
-      <div className="flex items-center gap-3 mt-6 pt-5 border-t border-[#D4AF37]/10">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-6 pt-5 border-t border-[#D4AF37]/10">
         <button
           data-testid="json-import-submit"
           onClick={handleImport}
           disabled={uploading || !file}
-          className="rune-btn"
+          className="rune-btn w-full sm:w-auto"
         >
           <Save size={14} /> {uploading ? "Importing…" : `Import as ${effectiveName || "…"}`}
         </button>
