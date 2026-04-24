@@ -95,7 +95,7 @@ export default function Category() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Filter by name…"
-              className="bg-[#0A0A0F] border border-[#D4AF37]/30 pl-9 pr-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-[#8B5CF6] focus:outline-none w-full sm:w-64"
+              className="bg-[#0b0b10] border border-[#D4AF37]/30 pl-9 pr-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-[#a83246] focus:outline-none w-full sm:w-64"
             />
           </div>
           {!isVideos && (
@@ -105,7 +105,7 @@ export default function Category() {
                 data-testid="rarity-filter"
                 value={rarity}
                 onChange={(e) => setRarity(e.target.value)}
-                className="bg-[#0A0A0F] border border-[#D4AF37]/30 pl-9 pr-8 py-2.5 text-sm text-slate-100 focus:border-[#8B5CF6] focus:outline-none appearance-none tracking-[0.15em] uppercase"
+                className="bg-[#0b0b10] border border-[#D4AF37]/30 pl-9 pr-8 py-2.5 text-sm text-slate-100 focus:border-[#a83246] focus:outline-none appearance-none tracking-[0.15em] uppercase"
               >
                 {RARITIES.map((r) => <option key={r} value={r}>{r}</option>)}
               </select>
@@ -118,7 +118,7 @@ export default function Category() {
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {Array.from({ length: 8 }).map((_, i) => (
-            <RPGFrame key={i} className="aspect-[4/3] animate-pulse bg-[#12121A]" />
+            <RPGFrame key={i} className="aspect-[4/3] animate-pulse bg-[#14090d]" />
           ))}
         </div>
       ) : filtered.length === 0 ? (

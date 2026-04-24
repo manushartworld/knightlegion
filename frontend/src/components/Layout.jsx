@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 export default function Layout() {
   const [collapsed, setCollapsed] = useState(false);
   return (
-    <div className="min-h-screen bg-[#0A0A0F] text-slate-200">
+    <div className="min-h-screen bg-[#0b0b10] text-slate-200">
       <TopNav />
       <div className="flex">
         <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />

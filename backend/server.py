@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
+import re
+import json
 import logging
 import uuid
 import requests
@@ -14,6 +16,8 @@ from datetime import datetime, timezone, timedelta
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
+DATA_DIR = ROOT_DIR / "data"
+DATA_DIR.mkdir(exist_ok=True)
 
 # MongoDB
 mongo_url = os.environ['MONGO_URL']
@@ -419,6 +423,55 @@ async def get_counts():
         sub = row["_id"]["subcategory"]
         counts.setdefault(cat, {})[sub] = row["count"]
     return counts
+
+
+# ============== Dynamic JSON Data Sources ==============
+_NAME_RE = re.compile(r"^[a-z0-9_-]+$")
+
+
+@api_router.get("/data/{name}")
+async def get_data_json(name: str):
+    """Serve a JSON data source (e.g. items, characters, craft).
+    Any file placed at /app/backend/data/{name}.json is auto-exposed.
+    """
+    if not _NAME_RE.match(name):
+        raise HTTPException(status_code=400, detail="invalid name")
+    p = DATA_DIR / f"{name}.json"
+    if not p.exists():
+        raise HTTPException(status_code=404, detail=f"{name} data not found")
+    try:
+        with open(p, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        logging.error(f"Failed to read {p}: {e}")
+        raise HTTPException(status_code=500, detail="failed to read data file")
+
+
+@api_router.get("/data")
+async def list_data_sources():
+    sources = []
+    for p in DATA_DIR.glob("*.json"):
+        try:
+            sources.append({"name": p.stem, "size": p.stat().st_size})
+        except Exception:
+            pass
+    return {"sources": sources}
+
+
+@api_router.put("/data/{name}")
+async def put_data_json(name: str, file: UploadFile = File(...), user: dict = Depends(require_admin)):
+    """Admin-only: replace the JSON data source. Supports future character.json etc."""
+    if not _NAME_RE.match(name):
+        raise HTTPException(status_code=400, detail="invalid name")
+    data = await file.read()
+    try:
+        parsed = json.loads(data.decode("utf-8"))
+    except Exception:
+        raise HTTPException(status_code=400, detail="invalid JSON")
+    p = DATA_DIR / f"{name}.json"
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(parsed, f, ensure_ascii=False)
+    return {"ok": True, "name": name, "size": p.stat().st_size}
 
 
 @api_router.get("/")

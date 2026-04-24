@@ -59,3 +59,11 @@ Files: `POST /api/upload` (admin), `GET /api/files/{path:path}`
 - Invite user to sign in with Google to auto-claim Archon (admin) rank
 - Seed first few heroes/weapons/videos from admin panel
 - Wire up News/Forums once content cadence is defined
+
+## Update — 2026-02-24 · JSON-driven Items + Bordeaux theme
+- **Theme**: Full palette shift to dark fantasy bordeaux. `--bordeaux #6b1f2b`, `--bordeaux-bright #a83246`, bg `#0b0b10`. All purple (#8B5CF6) and arcane-blue (#3B82F6) references removed from every component and CSS file. Gold (#D4AF37) kept as the ornamental accent.
+- **Dynamic data layer**: Added `GET /api/data/{name}`, `GET /api/data`, `PUT /api/data/{name}` (admin multipart). Drop any JSON at `/app/backend/data/{name}.json` and it's auto-exposed. `items.json` (3.1 MB, 656 groups) pre-seeded from the user's upload.
+- **Items system**: `/c/items/:sub` now routes to `ItemsCategory.jsx` which fetches `/api/data/items` via `useJsonData` hook, flattens the grouped structure, and renders one card per base item. Filters: search, grade, type, permitted class — options auto-derived from the JSON. Click → `ItemDetailModal` shows every field (including zeros) plus all enchantment tiers side-by-side. Fully data-driven: add a new key to items.json and it appears.
+- **Subcategory mapping** (items.json top keys → sidebar subs): weapons←weaponItems, armors←armorItems+shieldItems, accessories←WebAccessoriesEnchants, skins←skinItems, materials←generalItems.
+- **Ready for future**: `useJsonData('characters')` / `useJsonData('craft')` already works — just drop the file in `/app/backend/data/`.
+- **Stylised icon tiles**: `ItemIconTile` picks a Lucide icon by type regex and tints by grade (gold=Unique, bordeaux=Legendary, etc.). No external art required.

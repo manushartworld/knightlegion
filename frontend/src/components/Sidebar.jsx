@@ -14,7 +14,7 @@ export default function Sidebar({ collapsed, setCollapsed }) {
   return (
     <aside
       data-testid="sidebar"
-      className={`hidden lg:flex flex-col sticky top-[64px] h-[calc(100vh-64px)] bg-[#0D0D14] border-r border-[#D4AF37]/15 transition-[width] duration-300 ${
+      className={`hidden lg:flex flex-col sticky top-[64px] h-[calc(100vh-64px)] bg-[#0e0509] border-r border-[#D4AF37]/15 transition-[width] duration-300 ${
         collapsed ? "w-[68px]" : "w-[260px]"
       }`}
     >
@@ -39,7 +39,7 @@ export default function Sidebar({ collapsed, setCollapsed }) {
                 title={cat.label}
               >
                 <span className="flex items-center gap-3">
-                  <Icon size={16} className="text-[#8B5CF6]" />
+                  <Icon size={16} className="text-[#a83246]" />
                   {!collapsed && <span>{cat.label}</span>}
                 </span>
                 {!collapsed && (isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />)}
@@ -58,8 +58,8 @@ export default function Sidebar({ collapsed, setCollapsed }) {
                         data-testid={`sidebar-link-${cat.slug}-${sub.slug}`}
                         className={`sidebar-item flex items-center gap-3 px-3 py-2 text-sm border-l-2 ${
                           active
-                            ? "border-[#D4AF37] bg-[#8B5CF6]/10 text-[#D4AF37]"
-                            : "border-transparent text-slate-400 hover:text-slate-100 hover:border-[#8B5CF6]/70 hover:bg-[#8B5CF6]/5"
+                            ? "border-[#D4AF37] bg-[#a83246]/10 text-[#D4AF37]"
+                            : "border-transparent text-slate-400 hover:text-slate-100 hover:border-[#a83246]/70 hover:bg-[#a83246]/5"
                         }`}
                       >
                         <SubIcon size={13} className="opacity-70" />

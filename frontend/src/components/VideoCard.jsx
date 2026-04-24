@@ -31,7 +31,7 @@ export default function VideoCard({ entry }) {
         onClick={() => ytId && setOpen(true)}
       >
         <RPGFrame glow className="overflow-hidden">
-          <div className="relative aspect-video bg-gradient-to-br from-[#1A1A24] to-[#0A0A0F]">
+          <div className="relative aspect-video bg-gradient-to-br from-[#1a0b10] to-[#0b0b10]">
             {thumb ? (
               <img
                 src={thumb}

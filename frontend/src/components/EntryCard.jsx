@@ -7,8 +7,8 @@ import { Swords, ShieldCheck, Heart, Sparkles } from "lucide-react";
 const RARITY_COLORS = {
   common: "text-slate-300 border-slate-500/40",
   uncommon: "text-emerald-300 border-emerald-500/50",
-  rare: "text-[#3B82F6] border-[#3B82F6]/60",
-  epic: "text-[#8B5CF6] border-[#8B5CF6]/60",
+  rare: "text-[#6b1f2b] border-[#6b1f2b]/60",
+  epic: "text-[#a83246] border-[#a83246]/60",
   legendary: "text-[#D4AF37] border-[#D4AF37]/80",
   mythic: "text-[#E11D48] border-[#E11D48]/60",
 };
@@ -26,7 +26,7 @@ export default function EntryCard({ entry }) {
       className="block group"
     >
       <RPGFrame glow className="overflow-hidden">
-        <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#1A1A24] to-[#0A0A0F]">
+        <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#1a0b10] to-[#0b0b10]">
           {img ? (
             <img
               src={img}
@@ -35,10 +35,10 @@ export default function EntryCard({ entry }) {
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
-              <Sparkles size={40} className="text-[#8B5CF6]/40" />
+              <Sparkles size={40} className="text-[#a83246]/40" />
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b10] via-transparent to-transparent" />
           {rarity && (
             <span
               className={`absolute top-3 left-3 text-[10px] tracking-[0.3em] uppercase px-2 py-1 border bg-black/60 backdrop-blur-md ${rarityClass}`}
@@ -72,7 +72,7 @@ export default function EntryCard({ entry }) {
               )}
               {stats.defense != null && (
                 <span className="flex items-center gap-1 text-slate-300">
-                  <ShieldCheck size={12} className="text-[#3B82F6]" /> {stats.defense}
+                  <ShieldCheck size={12} className="text-[#6b1f2b]" /> {stats.defense}
                 </span>
               )}
               {stats.hp != null && (

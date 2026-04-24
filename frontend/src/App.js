@@ -5,6 +5,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
+import ItemsCategory from "./pages/ItemsCategory";
 import EntryDetail from "./pages/EntryDetail";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
@@ -22,6 +23,7 @@ function AppRouter() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/c/items/:sub" element={<ItemsCategory />} />
         <Route path="/c/:category/:sub" element={<Category />} />
         <Route path="/e/:id" element={<EntryDetail />} />
         <Route path="/admin" element={<Admin />} />

@@ -5,16 +5,17 @@
 @tailwind utilities;
 
 :root {
-    --bg-base: #0A0A0F;
-    --bg-surface: #12121A;
-    --bg-surface-hover: #1A1A24;
+    --bg-base: #0b0b10;
+    --bg-surface: #14090d;
+    --bg-surface-hover: #1a0b10;
     --text-primary: #E2E8F0;
     --text-muted: #94A3B8;
     --gold: #D4AF37;
     --gold-soft: rgba(212, 175, 55, 0.25);
-    --arcane: #3B82F6;
-    --void: #8B5CF6;
-    --crimson: #E11D48;
+    --bordeaux: #6b1f2b;
+    --bordeaux-bright: #a83246;
+    --bordeaux-deep: #3e0f17;
+    --crimson: #8b2635;
 }
 
 body {
@@ -28,24 +29,24 @@ body {
 
 @layer base {
     :root {
-        --background: 240 14% 5%;
+        --background: 240 20% 5%;
         --foreground: 210 30% 92%;
-        --card: 240 14% 8%;
+        --card: 350 40% 7%;
         --card-foreground: 210 30% 92%;
-        --popover: 240 14% 8%;
+        --popover: 350 40% 7%;
         --popover-foreground: 210 30% 92%;
         --primary: 46 65% 52%;
         --primary-foreground: 240 14% 5%;
-        --secondary: 240 10% 14%;
+        --secondary: 350 40% 14%;
         --secondary-foreground: 210 30% 92%;
-        --muted: 240 10% 14%;
+        --muted: 350 30% 12%;
         --muted-foreground: 215 16% 65%;
-        --accent: 258 80% 66%;
+        --accent: 350 55% 43%;
         --accent-foreground: 210 30% 98%;
-        --destructive: 350 82% 52%;
+        --destructive: 350 75% 45%;
         --destructive-foreground: 0 0% 98%;
-        --border: 240 10% 18%;
-        --input: 240 10% 14%;
+        --border: 350 40% 20%;
+        --input: 350 30% 14%;
         --ring: 46 65% 52%;
         --radius: 0;
     }
@@ -67,7 +68,7 @@ body {
 /* ===== RPG UI FRAME ===== */
 .rpg-frame {
     position: relative;
-    background: linear-gradient(180deg, rgba(18, 18, 26, 0.95) 0%, rgba(10, 10, 15, 0.98) 100%);
+    background: linear-gradient(180deg, rgba(20, 9, 13, 0.95) 0%, rgba(11, 11, 16, 0.98) 100%);
     border: 1px solid rgba(212, 175, 55, 0.25);
     box-shadow: 
         inset 0 0 30px rgba(0, 0, 0, 0.6),
@@ -119,11 +120,11 @@ body {
 }
 
 .rpg-frame.glow-hover:hover {
-    border-color: rgba(139, 92, 246, 0.7);
+    border-color: rgba(168, 50, 70, 0.8);
     box-shadow: 
-        inset 0 0 30px rgba(139, 92, 246, 0.1),
-        0 0 30px rgba(139, 92, 246, 0.35),
-        0 0 60px rgba(59, 130, 246, 0.15);
+        inset 0 0 30px rgba(168, 50, 70, 0.14),
+        0 0 30px rgba(168, 50, 70, 0.5),
+        0 0 60px rgba(107, 31, 43, 0.3);
     transform: translateY(-4px);
 }
 
@@ -131,8 +132,8 @@ body {
 .rpg-frame.glow-hover:hover::after,
 .rpg-frame.glow-hover:hover > .corner-tr,
 .rpg-frame.glow-hover:hover > .corner-bl {
-    border-color: var(--void);
-    box-shadow: 0 0 12px rgba(139, 92, 246, 0.7);
+    border-color: var(--bordeaux-bright);
+    box-shadow: 0 0 12px rgba(168, 50, 70, 0.8);
 }
 
 /* Diamond separator (ornate) */
@@ -161,7 +162,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(10,10,15,0.55) 0%, rgba(10,10,15,0.75) 50%, rgba(10,10,15,1) 100%);
+    background: linear-gradient(180deg, rgba(11,11,16,0.55) 0%, rgba(11,11,16,0.75) 50%, rgba(11,11,16,1) 100%);
     pointer-events: none;
 }
 
@@ -193,7 +194,15 @@ body {
 }
 
 .text-arcane {
-    background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+    background: linear-gradient(135deg, #a83246 0%, #6b1f2b 60%, #D4AF37 120%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.text-bordeaux {
+    background: linear-gradient(135deg, #a83246 0%, #6b1f2b 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -202,16 +211,16 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #0A0A0F; }
+::-webkit-scrollbar-track { background: #0b0b10; }
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(139,92,246,0.5), rgba(212,175,55,0.3));
-    border: 2px solid #0A0A0F;
+    background: linear-gradient(180deg, rgba(168,50,70,0.6), rgba(212,175,55,0.3));
+    border: 2px solid #0b0b10;
 }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(139,92,246,0.8), rgba(212,175,55,0.6)); }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, rgba(168,50,70,0.9), rgba(212,175,55,0.6)); }
 
 /* Selection */
 ::selection {
-    background: rgba(139, 92, 246, 0.4);
+    background: rgba(168, 50, 70, 0.55);
     color: #fff;
 }
 
@@ -229,14 +238,14 @@ body {
 .stat-bar-track {
     position: relative;
     height: 10px;
-    background: linear-gradient(180deg, #0A0A0F, #1A1A24);
+    background: linear-gradient(180deg, #0b0b10, #1a0b10);
     border: 1px solid rgba(212,175,55,0.3);
     overflow: hidden;
 }
 .stat-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--void), var(--arcane), var(--gold));
-    box-shadow: 0 0 12px rgba(139,92,246,0.7);
+    background: linear-gradient(90deg, #6b1f2b, #a83246, #D4AF37);
+    box-shadow: 0 0 12px rgba(168,50,70,0.75);
     transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -254,7 +263,7 @@ body {
     text-transform: uppercase;
     font-size: 0.875rem;
     color: #F5E6A3;
-    background: linear-gradient(180deg, rgba(139,92,246,0.2), rgba(59,130,246,0.15));
+    background: linear-gradient(180deg, rgba(168,50,70,0.3), rgba(107,31,43,0.25));
     border: 1px solid rgba(212, 175, 55, 0.5);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -262,9 +271,9 @@ body {
 }
 .rune-btn:hover {
     color: #fff;
-    background: linear-gradient(180deg, rgba(139,92,246,0.4), rgba(59,130,246,0.3));
+    background: linear-gradient(180deg, rgba(168,50,70,0.5), rgba(107,31,43,0.4));
     border-color: var(--gold);
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 22px rgba(168, 50, 70, 0.7);
 }
 .rune-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
@@ -279,7 +288,7 @@ body {
 /* Keyframes */
 @keyframes glow-pulse {
     0%, 100% { box-shadow: 0 0 10px rgba(212,175,55,0.4); }
-    50% { box-shadow: 0 0 25px rgba(212,175,55,0.8), 0 0 40px rgba(139,92,246,0.35); }
+    50% { box-shadow: 0 0 25px rgba(212,175,55,0.85), 0 0 40px rgba(168,50,70,0.45); }
 }
 .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
 

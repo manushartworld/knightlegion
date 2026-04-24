@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function StatBar({ label, value, max = 100, icon: Icon, color = "#8B5CF6" }) {
+export default function StatBar({ label, value, max = 100, icon: Icon, color = "#a83246" }) {
   const pct = Math.min(100, Math.max(0, (value / max) * 100));
   return (
     <div data-testid={`stat-bar-${label.toLowerCase()}`} className="space-y-2">

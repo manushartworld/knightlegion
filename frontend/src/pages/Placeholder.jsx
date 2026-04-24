@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext";
 export function Placeholder({ title, blurb, testid }) {
   return (
     <div data-testid={testid} className="px-6 md:px-12 lg:px-16 py-16">
-      <span className="text-[11px] tracking-[0.4em] uppercase text-[#8B5CF6]">Codex</span>
+      <span className="text-[11px] tracking-[0.4em] uppercase text-[#a83246]">Codex</span>
       <h1 className="font-heading text-4xl sm:text-5xl text-slate-100 mt-2 mb-4">{title}</h1>
       <p className="text-slate-400 max-w-2xl mb-10">{blurb}</p>
       <RPGFrame className="p-12 text-center">
@@ -43,7 +43,7 @@ export function Account() {
   if (!user) return <Placeholder testid="account-page" title="Account" blurb="Sign in to view your sigil." />;
   return (
     <div data-testid="account-page" className="px-6 md:px-12 lg:px-16 py-16 max-w-3xl">
-      <span className="text-[11px] tracking-[0.4em] uppercase text-[#8B5CF6]">Sigil</span>
+      <span className="text-[11px] tracking-[0.4em] uppercase text-[#a83246]">Sigil</span>
       <h1 className="font-heading text-4xl sm:text-5xl text-slate-100 mt-2 mb-10">Account</h1>
       <RPGFrame className="p-8">
         <div className="flex items-center gap-6">

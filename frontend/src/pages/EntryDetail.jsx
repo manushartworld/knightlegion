@@ -67,7 +67,7 @@ export default function EntryDetail() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-5">
           <RPGFrame className="p-3">
-            <div className="relative aspect-[3/4] bg-gradient-to-br from-[#1A1A24] to-[#0A0A0F] overflow-hidden">
+            <div className="relative aspect-[3/4] bg-gradient-to-br from-[#1a0b10] to-[#0b0b10] overflow-hidden">
               {img ? (
                 <img src={img} alt={entry.title} className="w-full h-full object-cover" />
               ) : (
@@ -83,7 +83,7 @@ export default function EntryDetail() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="text-[11px] tracking-[0.4em] uppercase text-[#8B5CF6] mb-2">
+          <div className="text-[11px] tracking-[0.4em] uppercase text-[#a83246] mb-2">
             {entry.category} / {entry.subcategory}
           </div>
           <h1 className="font-heading text-4xl sm:text-5xl text-slate-100 mb-4">{entry.title}</h1>
@@ -97,9 +97,9 @@ export default function EntryDetail() {
               <div className="text-[11px] tracking-[0.4em] uppercase text-[#D4AF37] mb-5">Attributes</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5">
                 {stats.attack != null && <StatBar label="Attack" value={stats.attack} max={1000} icon={Swords} color="#E11D48" />}
-                {stats.defense != null && <StatBar label="Defense" value={stats.defense} max={1000} icon={ShieldCheck} color="#3B82F6" />}
+                {stats.defense != null && <StatBar label="Defense" value={stats.defense} max={1000} icon={ShieldCheck} color="#6b1f2b" />}
                 {stats.hp != null && <StatBar label="HP" value={stats.hp} max={5000} icon={Heart} color="#10B981" />}
-                {stats.mana != null && <StatBar label="Mana" value={stats.mana} max={500} icon={Zap} color="#8B5CF6" />}
+                {stats.mana != null && <StatBar label="Mana" value={stats.mana} max={500} icon={Zap} color="#a83246" />}
                 {stats.speed != null && <StatBar label="Speed" value={stats.speed} max={200} icon={Gauge} color="#F59E0B" />}
                 {stats.level != null && <StatBar label="Level" value={stats.level} max={100} icon={Star} color="#D4AF37" />}
               </div>

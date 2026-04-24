@@ -41,7 +41,7 @@ export default function SearchBar({ autoFocus = false, placeholder = "Search art
         />
         <Sparkles
           size={16}
-          className="absolute right-5 top-1/2 -translate-y-1/2 text-[#8B5CF6] float-slow pointer-events-none"
+          className="absolute right-5 top-1/2 -translate-y-1/2 text-[#a83246] float-slow pointer-events-none"
         />
         <input
           data-testid="search-codex-input"
@@ -52,14 +52,14 @@ export default function SearchBar({ autoFocus = false, placeholder = "Search art
           onFocus={() => q && setOpen(true)}
           onBlur={() => setTimeout(() => setOpen(false), 150)}
           placeholder={placeholder}
-          className="w-full bg-[#0A0A0F]/70 border border-[#D4AF37]/40 pl-14 pr-14 py-5 text-lg text-slate-100 placeholder:text-slate-500 backdrop-blur-md focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/40 shadow-[0_0_30px_rgba(0,0,0,0.6)] transition-all font-['Outfit']"
+          className="w-full bg-[#0b0b10]/70 border border-[#D4AF37]/40 pl-14 pr-14 py-5 text-lg text-slate-100 placeholder:text-slate-500 backdrop-blur-md focus:border-[#a83246] focus:outline-none focus:ring-2 focus:ring-[#a83246]/40 shadow-[0_0_30px_rgba(0,0,0,0.6)] transition-all font-['Outfit']"
         />
       </div>
 
       {open && (results.length > 0 || loading) && (
         <div
           data-testid="search-results"
-          className="absolute mt-2 w-full bg-[#0A0A0F]/95 border border-[#D4AF37]/30 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] z-30"
+          className="absolute mt-2 w-full bg-[#0b0b10]/95 border border-[#D4AF37]/30 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] z-30"
         >
           {loading && (
             <div className="px-5 py-4 text-sm text-slate-400">Consulting the arcane archives…</div>
@@ -68,7 +68,7 @@ export default function SearchBar({ autoFocus = false, placeholder = "Search art
             <button
               key={r.id}
               onMouseDown={() => go(r.id)}
-              className="w-full text-left px-5 py-3 flex items-center justify-between hover:bg-[#8B5CF6]/10 border-b border-[#D4AF37]/10 last:border-b-0 group"
+              className="w-full text-left px-5 py-3 flex items-center justify-between hover:bg-[#a83246]/10 border-b border-[#D4AF37]/10 last:border-b-0 group"
             >
               <div>
                 <div className="text-slate-100 group-hover:text-[#D4AF37] font-heading text-base">
@@ -78,7 +78,7 @@ export default function SearchBar({ autoFocus = false, placeholder = "Search art
                   {r.category} / {r.subcategory}
                 </div>
               </div>
-              <ArrowRight size={16} className="text-[#8B5CF6] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <ArrowRight size={16} className="text-[#a83246] opacity-0 group-hover:opacity-100 transition-opacity" />
             </button>
           ))}
           {!loading && results.length === 0 && q && (

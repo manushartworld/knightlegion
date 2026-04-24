@@ -24,12 +24,12 @@ export default function TopNav() {
   return (
     <header
       data-testid="top-nav"
-      className="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#0A0A0F]/80 border-b border-[#D4AF37]/20"
+      className="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#0b0b10]/80 border-b border-[#D4AF37]/20"
     >
       <div className="mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
         <Link to="/" data-testid="brand-link" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 border border-[#D4AF37]/60 flex items-center justify-center bg-black/40 group-hover:border-[#8B5CF6] transition-colors">
-            <Shield size={18} className="text-[#D4AF37] group-hover:text-[#8B5CF6] transition-colors" />
+          <div className="w-9 h-9 border border-[#D4AF37]/60 flex items-center justify-center bg-black/40 group-hover:border-[#a83246] transition-colors">
+            <Shield size={18} className="text-[#D4AF37] group-hover:text-[#a83246] transition-colors" />
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-heading text-lg tracking-[0.3em] text-mystic">AETHRYL</span>
@@ -54,7 +54,7 @@ export default function TopNav() {
               <DropdownMenuTrigger asChild>
                 <button
                   data-testid="account-menu-btn"
-                  className="flex items-center gap-2 pl-3 pr-2 py-1.5 border border-[#D4AF37]/40 bg-black/40 hover:border-[#8B5CF6] hover:bg-[#8B5CF6]/10 transition-all"
+                  className="flex items-center gap-2 pl-3 pr-2 py-1.5 border border-[#D4AF37]/40 bg-black/40 hover:border-[#a83246] hover:bg-[#a83246]/10 transition-all"
                 >
                   {user.picture ? (
                     <img src={user.picture} alt="" className="w-7 h-7 rounded-full border border-[#D4AF37]/50" />
@@ -66,7 +66,7 @@ export default function TopNav() {
                   </span>
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-[#12121A] border-[#D4AF37]/30 text-slate-200 rounded-none">
+              <DropdownMenuContent align="end" className="bg-[#14090d] border-[#D4AF37]/30 text-slate-200 rounded-none">
                 <DropdownMenuLabel className="font-heading text-[#D4AF37]">{user.name}</DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-[#D4AF37]/20" />
                 <DropdownMenuItem onClick={() => navigate("/account")} data-testid="menu-account" className="cursor-pointer">

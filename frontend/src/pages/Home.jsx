@@ -94,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* FEATURED HERO */}
-      <section className="px-6 md:px-12 lg:px-20 py-20 bg-gradient-to-b from-[#0A0A0F] via-[#10101A] to-[#0A0A0F] relative overflow-hidden">
+      <section className="px-6 md:px-12 lg:px-20 py-20 bg-gradient-to-b from-[#0b0b10] via-[#14090d] to-[#0b0b10] relative overflow-hidden">
         <div className="absolute inset-0 noise-overlay" />
         <div className="relative">
           <div className="ornate-rule mb-10">
@@ -102,14 +102,14 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5">
-              <RPGFrame className="p-3 bg-gradient-to-b from-[#1A1A24] to-[#0A0A0F]">
+              <RPGFrame className="p-3 bg-gradient-to-b from-[#1a0b10] to-[#0b0b10]">
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img
                     src={heroImg}
                     alt={hero?.title || "Featured Champion"}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b10] via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37]">
                       Lv. {heroStats.level || 99} · {heroStats.rarity || "Legendary"}
@@ -120,7 +120,7 @@ export default function Home() {
             </div>
 
             <div className="lg:col-span-7">
-              <span className="text-[11px] tracking-[0.4em] uppercase text-[#8B5CF6]">
+              <span className="text-[11px] tracking-[0.4em] uppercase text-[#a83246]">
                 {hero ? `${hero.category} / ${hero.subcategory}` : "Characters / Heroes"}
               </span>
               <h3 className="font-heading text-4xl sm:text-5xl mt-3 mb-5 text-slate-100">
@@ -133,9 +133,9 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-x-10 gap-y-5 max-w-lg">
                 <StatBar label="Attack" value={heroStats.attack ?? 820} max={1000} icon={Swords} color="#E11D48" />
-                <StatBar label="Defense" value={heroStats.defense ?? 640} max={1000} icon={ShieldCheck} color="#3B82F6" />
+                <StatBar label="Defense" value={heroStats.defense ?? 640} max={1000} icon={ShieldCheck} color="#6b1f2b" />
                 <StatBar label="HP" value={heroStats.hp ?? 4200} max={5000} icon={Heart} color="#10B981" />
-                <StatBar label="Mana" value={heroStats.mana ?? 380} max={500} icon={Zap} color="#8B5CF6" />
+                <StatBar label="Mana" value={heroStats.mana ?? 380} max={500} icon={Zap} color="#a83246" />
               </div>
 
               <div className="mt-10 flex gap-4">
@@ -173,7 +173,7 @@ export default function Home() {
 
         {videos.length === 0 ? (
           <RPGFrame className="p-12 text-center">
-            <Video size={32} className="mx-auto text-[#8B5CF6]/50 mb-4" />
+            <Video size={32} className="mx-auto text-[#a83246]/50 mb-4" />
             <p className="text-slate-400 text-sm">
               No video tutorials chronicled yet. The scribes are hard at work.
             </p>

@@ -17,7 +17,7 @@ export default function CategoryCard({ category, index = 0 }) {
     >
       <RPGFrame glow className="p-8 h-full min-h-[220px] flex flex-col justify-between">
         <div className="flex items-start justify-between">
-          <div className="w-14 h-14 flex items-center justify-center border border-[#D4AF37]/40 bg-[#8B5CF6]/10 group-hover:bg-[#8B5CF6]/20 group-hover:border-[#8B5CF6] transition-all">
+          <div className="w-14 h-14 flex items-center justify-center border border-[#D4AF37]/40 bg-[#a83246]/10 group-hover:bg-[#a83246]/20 group-hover:border-[#a83246] transition-all">
             <Icon size={24} className="text-[#D4AF37] group-hover:text-[#E2E8F0] transition-colors" />
           </div>
           <span className="text-[10px] tracking-[0.3em] uppercase text-slate-500">
@@ -40,7 +40,7 @@ export default function CategoryCard({ category, index = 0 }) {
           </span>
           <ArrowRight
             size={16}
-            className="text-[#8B5CF6] group-hover:translate-x-1 group-hover:text-[#D4AF37] transition-all"
+            className="text-[#a83246] group-hover:translate-x-1 group-hover:text-[#D4AF37] transition-all"
           />
         </div>
       </RPGFrame>

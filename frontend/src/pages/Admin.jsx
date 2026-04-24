@@ -28,7 +28,7 @@ function Field({ label, children, testid }) {
   );
 }
 
-const inputCls = "w-full bg-[#0A0A0F] border border-[#D4AF37]/25 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-[#8B5CF6] focus:outline-none";
+const inputCls = "w-full bg-[#0b0b10] border border-[#D4AF37]/25 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-[#a83246] focus:outline-none";
 
 export default function Admin() {
   const { user, loading } = useAuth();
@@ -164,7 +164,7 @@ export default function Admin() {
     <div data-testid="admin-page" className="px-6 md:px-12 lg:px-16 py-10">
       <div className="flex items-end justify-between mb-8">
         <div>
-          <span className="text-[11px] tracking-[0.4em] uppercase text-[#8B5CF6]">Archon Sanctum</span>
+          <span className="text-[11px] tracking-[0.4em] uppercase text-[#a83246]">Archon Sanctum</span>
           <h1 className="font-heading text-4xl sm:text-5xl text-slate-100 mt-2">Codex Scriptorium</h1>
           <p className="text-slate-400 mt-2">Inscribe, amend, or banish entries from the eternal record.</p>
         </div>
@@ -332,7 +332,7 @@ export default function Admin() {
               {entries.length === 0 ? (
                 <tr><td colSpan={6} className="px-4 py-10 text-center text-slate-500">No entries yet.</td></tr>
               ) : entries.map((e) => (
-                <tr key={e.id} className="border-b border-[#D4AF37]/5 hover:bg-[#8B5CF6]/5">
+                <tr key={e.id} className="border-b border-[#D4AF37]/5 hover:bg-[#a83246]/5">
                   <td className="px-4 py-3 font-heading text-slate-100">{e.title}</td>
                   <td className="px-4 py-3 text-slate-400">{e.category}</td>
                   <td className="px-4 py-3 text-slate-400">{e.subcategory}</td>
