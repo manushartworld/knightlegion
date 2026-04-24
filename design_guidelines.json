@@ -1,0 +1,136 @@
+{
+  "project_name": "MMORPG Dark Fantasy Codex",
+  "theme": "Dark",
+  "archetype": "5 (Jewel & Luxury) & 7 (Electric & Neon - Dark Gaming Variant)",
+  "typography": {
+    "heading_font": "Cinzel, serif",
+    "body_font": "Outfit, sans-serif",
+    "sizes": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight",
+      "h3": "text-xl sm:text-2xl",
+      "body": "text-base leading-relaxed text-slate-300",
+      "labels": "text-sm tracking-[0.2em] uppercase"
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "#0A0A0F",
+      "surface": "#12121A",
+      "surface_hover": "#1A1A24"
+    },
+    "text": {
+      "primary": "#E2E8F0",
+      "muted": "#94A3B8",
+      "accent": "#D4AF37"
+    },
+    "accents": {
+      "gold": "#D4AF37",
+      "arcane_blue": "#3B82F6",
+      "void_purple": "#8B5CF6",
+      "crimson": "#E11D48"
+    },
+    "borders": {
+      "default": "rgba(212, 175, 55, 0.2)",
+      "glow": "rgba(139, 92, 246, 0.5)"
+    }
+  },
+  "layout_and_spacing": {
+    "global_padding": "p-6 md:p-8 lg:p-12",
+    "grid_system": {
+      "main": "grid-cols-1 md:grid-cols-12 gap-8",
+      "sidebar": "col-span-1 md:col-span-3 lg:col-span-2",
+      "content": "col-span-1 md:col-span-9 lg:col-span-10"
+    },
+    "card_padding": "p-6 sm:p-8",
+    "bento_grid": "grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+  },
+  "components": {
+    "top_nav": {
+      "style": "Glassmorphism, backdrop-blur-xl bg-[#0A0A0F]/80 border-b border-[#D4AF37]/20 z-50 sticky top-0",
+      "links": "Hover state: text-[#D4AF37] drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] transition-all duration-300"
+    },
+    "sidebar": {
+      "style": "bg-[#12121A] border-r border-[#D4AF37]/10 h-screen sticky top-0 overflow-y-auto",
+      "item_style": "text-sm text-slate-300 hover:text-[#3B82F6] hover:bg-[#3B82F6]/10 px-4 py-2 rounded-md transition-colors"
+    },
+    "hero_search": {
+      "background_overlay": "bg-gradient-to-b from-[#0A0A0F]/40 via-[#0A0A0F]/60 to-[#0A0A0F]",
+      "input_style": "bg-[#0A0A0F]/60 border border-[#D4AF37]/40 text-white rounded-none px-6 py-4 w-full max-w-2xl text-lg backdrop-blur-md focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/50 shadow-[0_0_15px_rgba(0,0,0,0.5)] placeholder:text-slate-500"
+    },
+    "category_cards": {
+      "style": "bg-gradient-to-br from-[#12121A] to-[#0A0A0F] border border-[#D4AF37]/30 p-8 cursor-pointer relative overflow-hidden group",
+      "hover_effect": "hover:-translate-y-2 hover:border-[#8B5CF6] hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all duration-500",
+      "inner_glow": "absolute inset-0 bg-gradient-to-tr from-[#3B82F6]/0 to-[#8B5CF6]/0 group-hover:from-[#3B82F6]/10 group-hover:to-[#8B5CF6]/10 transition-colors duration-500"
+    },
+    "rpg_ui_frames": {
+      "style": "relative border-2 border-transparent",
+      "border_image": "linear-gradient(to right, #D4AF37, #8B5CF6) 1",
+      "corner_accents": "absolute w-3 h-3 border border-[#D4AF37] (top-left, top-right, bottom-left, bottom-right) to mimic game panels"
+    },
+    "video_card": {
+      "style": "group relative overflow-hidden border border-[#D4AF37]/20 bg-[#12121A]",
+      "overlay": "absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center",
+      "play_button": "w-12 h-12 rounded-full bg-[#E11D48]/80 text-white flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(225,29,72,0.6)]"
+    }
+  },
+  "effects_and_motion": {
+    "animations": {
+      "fade_in_up": "animate-in fade-in slide-in-from-bottom-8 duration-700",
+      "glow_pulse": "animate-pulse (used selectively on rare items/orbs)"
+    },
+    "particle_effects": "Recommend using tsparticles for subtle glowing embers or floating magic dust in the hero section",
+    "glassmorphism": "backdrop-blur-xl bg-[#0A0A0F]/70 border border-white/5 shadow-2xl"
+  },
+  "media_urls": {
+    "hero_background": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/4d80fd22-fbc5-408f-a8f7-3c9249d31b3b/images/e238a1866dc017166ea0a76dc7b2bf993fd0df701dae84c94624a7f901d06471.png",
+      "description": "Cinematic dark fantasy landscape, gothic castle ruins in thick glowing purple/blue fog. Use in the main Hero / Search section.",
+      "category": "hero"
+    },
+    "featured_hero": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/4d80fd22-fbc5-408f-a8f7-3c9249d31b3b/images/c1314429f7f5212db82097de293c9558ad5b0a92c5e36d356c8e82ab923f798f.png",
+      "description": "Dark fantasy RPG character portrait, high level armored paladin. Use in the Featured Hero section.",
+      "category": "character"
+    },
+    "weapon_icon": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/4d80fd22-fbc5-408f-a8f7-3c9249d31b3b/images/00d755deebeed461dbaa0fa8713bfb156b0dcb50ff369f3c00817eabea087a4c.png",
+      "description": "Glowing purple crystal broadsword icon. Use in the Items / Weapons category card or listings.",
+      "category": "item"
+    },
+    "craft_orb": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/4d80fd22-fbc5-408f-a8f7-3c9249d31b3b/images/fb159c10c66088e97d871ff19916ffa8360613219e084a1a9bda98de0e01b25f.png",
+      "description": "Mystical glowing orb of cosmos on stone pedestal. Use in Craft Systems or Orbs Stone category.",
+      "category": "item"
+    },
+    "video_thumbnail_1": {
+      "url": "https://images.pexels.com/photos/207130/pexels-photo-207130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Dreamlike mountain landscape. Use as background for video tutorial cards.",
+      "category": "thumbnail"
+    },
+    "video_thumbnail_2": {
+      "url": "https://images.pexels.com/photos/11785594/pexels-photo-11785594.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Mysterious glass monolith in forest. Use as background for video tutorial cards.",
+      "category": "thumbnail"
+    }
+  },
+  "instructions_to_main_agent": [
+    "You are building an immersive MMORPG Codex, not a standard SaaS platform. Avoid round, fluffy buttons. Use sharp edges, ornate borders, and stark high-contrast glows.",
+    "Do NOT use 'Inter' for headings. Use 'Cinzel' (google fonts) for a gothic, epic fantasy feel.",
+    "Do NOT use pure white backgrounds or standard light mode. Lock the theme to dark mode. The background should be '#0A0A0F'.",
+    "The Hero section must have a massive background image (use 'hero_background' URL) overlaid with a dark gradient (bg-black/60) so the search bar pops. Do not let the image overpower the UI.",
+    "Implement 'RPG UI Frames' for main containers. Instead of standard rounded cards, use rectangular divs with 1px gold/purple borders and corner adornments (small squares on corners).",
+    "For hover states on cards, use heavy box-shadows to simulate magical glows (e.g., shadow-[0_0_20px_rgba(139,92,246,0.5)]).",
+    "Use Phosphor icons or Lucide icons for UI elements, but color them with gold or blue/purple accents to fit the theme.",
+    "Ensure the sidebar is collapsible, mimicking an in-game menu panel with dark translucent backgrounds.",
+    "For the Video Tutorials section, create a realistic YouTube embed overlay: use the provided thumbnail media URLs, put a dark overlay on them, and center a red/gold play button.",
+    "Admin panel should maintain the dark theme but prioritize functional density (Archetype 4 style embedded in dark mode) for data entry.",
+    "Ensure all interactive elements have 'data-testid' attributes (e.g., 'data-testid=\"search-codex-input\"')."
+  ],
+  "dependencies": {
+    "fonts": "@fontsource/cinzel, @fontsource/outfit",
+    "icons": "lucide-react",
+    "animations": "framer-motion",
+    "particles": "@tsparticles/react @tsparticles/engine (optional, but highly recommended for embers)"
+  }
+}
