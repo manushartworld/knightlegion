@@ -1,0 +1,33 @@
+{
+  "datas": [
+    {
+      "id": "premium_box_v1", "curVip": 2500, "curBas": 500,
+      "items": [
+        {
+          "id": 1001,
+          "amount": 1,
+          "enchantLevel": 10
+        },
+        {
+          "slot": 2,
+          "id": 2005,
+          "amount": 50,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "id": "daily_gift_05",
+      "curVip": 0,
+      "curBas": 100,
+      "items": [
+        {
+          "slot": 0,
+          "id": 55,
+          "amount": 5,
+          "enchantLevel": 1
+        }
+      ]
+    }
+  ]
+}

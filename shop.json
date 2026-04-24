@@ -1,0 +1,173 @@
+{
+  "datas": [
+    {
+      "id": "com.manushart.knightlegion.curvip04", 
+      "set": 0, "curVip": 50000, "curBas": 0,
+      "begunTime": "2026-04-12 09:00:00", 
+      "endTime": "2026-04-15 18:03:59",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curvip03", 
+      "set": 0, "curVip": 20000, "curBas": 0,
+      "begunTime": "2026-04-12 09:00:00", 
+      "endTime": "2026-04-15 19:03:59",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curvip02", 
+      "set": 0, "curVip": 8000, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curvip01", 
+      "set": 0, "curVip": 3000, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curbas04", 
+      "set": 1, "curVip": 0, "curBas": 250000000,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curbas03", 
+      "set": 1, "curVip": 0, "curBas": 100000000,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curbas02", 
+      "set": 1, "curVip": 0, "curBas": 40000000,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.curbas01", 
+      "set": 1, "curVip": 0, "curBas": 15000000,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "com.manushart.knightlegion.pr01", "set": 2, "curVip": 0, "curBas": 0,
+      "begunTime": "2026-04-12 09:00:00", 
+      "endTime": "2026-04-15 20:03:59",
+      "isActive": true,
+      "items": [
+        {
+          "id": 618,
+          "amount": 5,
+          "enchantLevel": 0
+        },
+        {
+          "id": 617,
+          "amount": 10,
+          "enchantLevel": 0
+        },
+        {
+          "id": 616,
+          "amount": 20,
+          "enchantLevel": 0
+        },
+        {
+          "id": 255,
+          "amount": 25,
+          "enchantLevel": 0
+        },
+        {
+          "id": 254,
+          "amount": 30,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    
+    {
+      "id": "com.manushart.knightlegion.pr02", "set": 2, "curVip": 0, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": [
+        {
+          "id": 487,
+          "amount": 30,
+          "enchantLevel": 0
+        },
+        {
+          "id": 504,
+          "amount": 30,
+          "enchantLevel": 0
+        },
+        {
+          "id": 481,
+          "amount": 30,
+          "enchantLevel": 0
+        },
+        {
+          "id": 489,
+          "amount": 15,
+          "enchantLevel": 0
+        },
+        {
+          "id": 424,
+          "amount": 15,
+          "enchantLevel": 0
+        },
+        {
+          "id": 511,
+          "amount": 15,
+          "enchantLevel": 0
+        },
+        {
+          "id": 611,
+          "amount": 15,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "id": "com.manushart.knightlegion.pr03", "set": 2, "curVip": 0, "curBas": 0,
+      "begunTime": "2026-04-12 09:00:00", 
+      "endTime": "2026-04-15 22:03:59",
+      "isActive": true,
+      "items": [
+        {
+          "id": 541,
+          "amount": 400,
+          "enchantLevel": 0
+        },
+        {
+          "id": 539,
+          "amount": 300,
+          "enchantLevel": 0
+        },
+        {
+          "id": 519,
+          "amount": 200,
+          "enchantLevel": 0
+        },
+        {
+          "id": 420,
+          "amount": 200,
+          "enchantLevel": 0
+        }
+      ]
+    }
+  ]
+}
