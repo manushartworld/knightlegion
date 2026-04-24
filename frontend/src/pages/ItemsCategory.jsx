@@ -9,18 +9,26 @@ import { findCategory, findSub } from "../lib/categories";
 import {
   ITEMS_SUB_TO_KEYS,
   flattenToGroups,
+  sortGroups,
   GRADE_ORDER,
   GRADE_STYLES,
   PRIMARY_STATS,
   prettyLabel,
   isMeaningful,
+  rarityTokens,
 } from "../lib/itemsHelpers";
 
 function ItemCard({ group, onOpen }) {
   const { base } = group;
   const gradeCls = GRADE_STYLES[base.itemGrade] || GRADE_STYLES.default;
+  const tokens = rarityTokens(base.itemGrade);
   // pick up to 2 meaningful primary stats for the card footer
   const shownStats = PRIMARY_STATS.filter((k) => isMeaningful(base[k])).slice(0, 2);
+  const gradeLabel =
+    base.itemGrade === "Middle" ? "Mid Class"
+    : base.itemGrade === "High" ? "High Class"
+    : base.itemGrade === "Low" ? "Low Class"
+    : base.itemGrade || "";
 
   return (
     <button
@@ -34,10 +42,10 @@ function ItemCard({ group, onOpen }) {
           <div className="min-w-0 flex-1">
             {base.itemGrade && (
               <span className={`text-[9px] tracking-[0.3em] uppercase px-2 py-0.5 border inline-block ${gradeCls}`}>
-                {base.itemGrade}
+                {gradeLabel}
               </span>
             )}
-            <h3 className="font-heading text-base text-slate-100 group-hover:text-[#D4AF37] transition-colors mt-2 line-clamp-2 leading-snug">
+            <h3 className={`font-heading text-base transition-colors mt-2 line-clamp-2 leading-snug ${tokens.name} group-hover:brightness-125`}>
               {base.itemName}
             </h3>
             <div className="flex gap-3 mt-1 text-[10px] tracking-[0.25em] uppercase text-slate-500">
@@ -87,7 +95,7 @@ export default function ItemsCategory() {
 
   const keys = ITEMS_SUB_TO_KEYS[sub] || [];
 
-  const groups = useMemo(() => flattenToGroups(data, keys), [data, keys]);
+  const groups = useMemo(() => sortGroups(flattenToGroups(data, keys)), [data, keys]);
 
   // Derive filter options from data
   const grades = useMemo(() => {

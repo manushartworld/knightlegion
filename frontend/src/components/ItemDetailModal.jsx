@@ -1,138 +1,170 @@
-import React from "react";
-import { X } from "lucide-react";
+import React, { useState, useMemo } from "react";
+import { X, ChevronUp, ChevronDown } from "lucide-react";
 import RPGFrame from "./RPGFrame";
 import ItemIconTile from "./ItemIconTile";
-import { prettyLabel, allFields, GRADE_STYLES, isMeaningful } from "../lib/itemsHelpers";
+import { prettyLabel, statFields, GRADE_STYLES, rarityTokens, isMeaningful } from "../lib/itemsHelpers";
 
-function FieldValue({ value }) {
-  if (value == null || value === "") return <span className="text-slate-600">—</span>;
-  if (typeof value === "boolean") return <span className="text-slate-200">{String(value)}</span>;
-  return <span className="text-slate-100">{String(value)}</span>;
+function formatValue(v) {
+  if (v == null || v === "") return "—";
+  if (typeof v === "boolean") return String(v);
+  return String(v);
 }
 
-// Render one enchantment tier as a column of all its fields.
-function TierColumn({ item, highlight }) {
-  const fields = allFields(item);
-  return (
-    <div className="min-w-[220px]">
-      <div className={`mb-3 text-[10px] tracking-[0.3em] uppercase px-2 py-1 border inline-block ${GRADE_STYLES[item.itemGrade] || GRADE_STYLES.default}`}>
-        {item.itemGrade || "Tier"}{highlight ? ` · ${highlight}` : ""}
-      </div>
-      <dl className="space-y-1.5">
-        {fields.map((k) => (
-          <div key={k} className="flex items-center justify-between gap-4 text-xs border-b border-[#D4AF37]/5 py-1">
-            <dt className="text-slate-500 tracking-wide">{prettyLabel(k)}</dt>
-            <dd className="font-mono"><FieldValue value={item[k]} /></dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  );
+// Compare two values for delta display (numeric only).
+function delta(curr, base) {
+  const a = Number(curr);
+  const b = Number(base);
+  if (Number.isNaN(a) || Number.isNaN(b)) return null;
+  const d = a - b;
+  if (d === 0) return null;
+  return d;
 }
 
 export default function ItemDetailModal({ group, onClose }) {
-  if (!group) return null;
-  const { base, items } = group;
-  const grade = base.itemGrade || "";
-  const gradeCls = GRADE_STYLES[grade] || GRADE_STYLES.default;
+  const [level, setLevel] = useState(0); // 0-indexed upgrade level
+  const items = group?.items || [];
+  const maxLevel = Math.max(0, items.length - 1);
 
-  // Primary summary fields: non-zero keys of base
-  const summaryKeys = allFields(base).filter((k) => {
-    if (k === "itemName" || k === "itemGrade" || k === "iconName") return false;
-    return isMeaningful(base[k]);
-  });
+  // Clamp when opening a new group
+  const safeLevel = Math.min(level, maxLevel);
+  const current = items[safeLevel] || group?.base;
+  const baseline = items[0] || group?.base;
+
+  const fields = useMemo(() => statFields(current || {}), [current]);
+
+  if (!group || !current) return null;
+  const grade = current.itemGrade || "";
+  const gradeCls = GRADE_STYLES[grade] || GRADE_STYLES.default;
+  const tokens = rarityTokens(grade);
 
   return (
     <div
       data-testid="item-detail-modal"
       onClick={onClose}
-      className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+      className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-5xl max-h-[92vh] overflow-hidden"
+        className="w-full max-w-2xl max-h-[92vh] overflow-hidden"
       >
-        <RPGFrame className="relative max-h-[92vh] flex flex-col">
+        <RPGFrame
+          className="relative flex flex-col max-h-[92vh]"
+          style={{ boxShadow: `0 0 0 1px ${tokens.border}, 0 0 40px ${tokens.glow}` }}
+        >
+          {/* Close */}
           <button
             onClick={onClose}
             data-testid="item-detail-close"
-            className="absolute top-4 right-4 w-9 h-9 border border-[#D4AF37]/50 bg-black/60 flex items-center justify-center text-[#D4AF37] hover:border-[#D4AF37] hover:bg-[#a83246]/10 z-10"
+            className="absolute top-3 right-3 w-9 h-9 border border-[#D4AF37]/50 bg-black/60 flex items-center justify-center text-[#D4AF37] hover:border-[#D4AF37] hover:bg-[#a83246]/10 z-10"
           >
             <X size={16} />
           </button>
 
           {/* Header */}
-          <div className="p-6 sm:p-8 border-b border-[#D4AF37]/10 flex gap-5 items-center">
-            <ItemIconTile item={base} size="lg" />
-            <div className="min-w-0">
+          <div className="p-6 border-b border-[#D4AF37]/15 flex gap-4 items-center">
+            <ItemIconTile item={current} size="lg" />
+            <div className="min-w-0 flex-1">
               <div className="flex items-center gap-3 flex-wrap">
                 {grade && (
                   <span className={`text-[10px] tracking-[0.3em] uppercase px-2 py-1 border ${gradeCls}`}>
-                    {grade}
+                    {grade === "Middle" ? "Mid Class" : grade === "High" ? "High Class" : grade === "Low" ? "Low Class" : grade}
                   </span>
                 )}
-                {base.type && (
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-slate-500">{base.type}</span>
+                {current.type && (
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-slate-500">{current.type}</span>
                 )}
-                {base.hand && (
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-slate-500">{base.hand}</span>
+                {current.hand && (
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-slate-500">{current.hand}</span>
+                )}
+                {maxLevel > 0 && (
+                  <span className="ml-auto text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] border border-[#D4AF37]/40 px-2 py-1 bg-black/40">
+                    +{safeLevel}
+                  </span>
                 )}
               </div>
-              <h2 className="font-heading text-2xl sm:text-3xl text-slate-100 mt-2 truncate">
-                {base.itemName}
+              <h2 className={`font-heading text-2xl sm:text-3xl mt-2 truncate ${tokens.name}`}>
+                {current.itemName}
               </h2>
-              {base.permitted && (
+              {current.permitted && (
                 <p className="text-[11px] tracking-[0.3em] uppercase text-[#a83246] mt-1">
-                  Wielded by · {base.permitted}
+                  Wielded by · {current.permitted}
                 </p>
               )}
             </div>
           </div>
 
-          {/* Body */}
-          <div className="p-6 sm:p-8 overflow-y-auto">
-            {/* Summary */}
-            {summaryKeys.length > 0 && (
-              <section className="mb-8">
-                <div className="text-[10px] tracking-[0.4em] uppercase text-[#D4AF37] mb-4">Attributes</div>
-                <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2">
-                  {summaryKeys.map((k) => (
-                    <div key={k} className="flex items-center justify-between border-b border-[#D4AF37]/8 py-2 text-sm">
-                      <dt className="text-slate-400">{prettyLabel(k)}</dt>
-                      <dd className="font-mono text-slate-100"><FieldValue value={base[k]} /></dd>
-                    </div>
-                  ))}
-                </dl>
-              </section>
-            )}
-
-            {/* All fields on base (including zeros) */}
-            <section className="mb-8">
-              <div className="text-[10px] tracking-[0.4em] uppercase text-slate-500 mb-3">Raw Fields</div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-                {allFields(base).map((k) => (
-                  <div key={k} className="flex items-center justify-between border-b border-white/5 py-1.5 text-xs">
-                    <dt className="text-slate-500">{prettyLabel(k)}</dt>
-                    <dd className="font-mono text-slate-300"><FieldValue value={base[k]} /></dd>
-                  </div>
-                ))}
+          {/* Stat table — SINGLE column */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="px-6 py-5">
+              <div className="text-[10px] tracking-[0.4em] uppercase text-slate-500 mb-3">
+                Stats · Level +{safeLevel}
               </div>
-            </section>
-
-            {/* Enchantment tiers */}
-            {items.length > 1 && (
-              <section>
-                <div className="text-[10px] tracking-[0.4em] uppercase text-[#a83246] mb-4">
-                  Enchantment Tiers · {items.length}
-                </div>
-                <div className="flex gap-6 overflow-x-auto pb-4">
-                  {items.map((it, i) => (
-                    <TierColumn key={i} item={it} highlight={`+${i}`} />
-                  ))}
-                </div>
-              </section>
-            )}
+              <table data-testid="item-stat-table" className="w-full text-sm font-mono">
+                <tbody>
+                  {fields.map((k) => {
+                    const v = current[k];
+                    const d = safeLevel > 0 ? delta(v, baseline?.[k]) : null;
+                    return (
+                      <tr key={k} className="border-b border-[#D4AF37]/8 hover:bg-[#a83246]/5">
+                        <td className="py-2.5 pr-4 text-slate-400 tracking-wider uppercase text-[11px] font-sans">
+                          {prettyLabel(k)}
+                        </td>
+                        <td className="py-2.5 text-right text-slate-100 whitespace-nowrap">
+                          <span className={isMeaningful(v) ? "" : "text-slate-600"}>{formatValue(v)}</span>
+                          {d != null && (
+                            <span
+                              className={`ml-3 inline-flex items-center gap-0.5 text-[10px] ${
+                                d > 0 ? "text-emerald-400" : "text-rose-400"
+                              }`}
+                            >
+                              {d > 0 ? <ChevronUp size={10} /> : <ChevronDown size={10} />}
+                              {d > 0 ? `+${d}` : d}
+                            </span>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
+
+          {/* Upgrade selector */}
+          {maxLevel > 0 && (
+            <div className="px-6 py-4 border-t border-[#D4AF37]/15 bg-[#0b0b10]/80">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[10px] tracking-[0.4em] uppercase text-[#D4AF37]">
+                  Enhancement
+                </span>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-slate-500">
+                  {maxLevel + 1} tiers · 0 → {maxLevel}
+                </span>
+              </div>
+              <div
+                data-testid="item-upgrade-selector"
+                className="flex flex-wrap gap-1.5"
+              >
+                {items.map((_, i) => {
+                  const active = i === safeLevel;
+                  return (
+                    <button
+                      key={i}
+                      data-testid={`upgrade-level-${i}`}
+                      onClick={() => setLevel(i)}
+                      className={`min-w-[44px] h-9 px-2 text-xs font-mono tracking-wider border transition-all ${
+                        active
+                          ? "bg-[#a83246] text-white border-[#D4AF37] shadow-[0_0_12px_rgba(168,50,70,0.7)]"
+                          : "bg-[#14090d] border-[#D4AF37]/25 text-slate-300 hover:border-[#a83246] hover:text-[#D4AF37]"
+                      }`}
+                    >
+                      +{i}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </RPGFrame>
       </div>
     </div>
