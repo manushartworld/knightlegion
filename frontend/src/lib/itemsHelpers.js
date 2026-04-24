@@ -34,15 +34,18 @@ export function rarityTokens(grade) {
 }
 
 // Maps Items sidebar subcategories to JSON top-level keys.
+// Shields are Weapon type (they're wielded, not worn), per the canonical RPG rules.
 export const ITEMS_SUB_TO_KEYS = {
-  weapons: ["weaponItems"],
-  armors: ["armorItems", "shieldItems"],
+  weapons: ["weaponItems", "shieldItems"],
+  armors: ["armorItems"],
   accessories: ["WebAccessoriesEnchants"],
   skins: ["skinItems"],
   materials: ["generalItems"],
 };
 
-// Returns an array of "groups" — each group is { base, items: [upgrade tiers] }
+// Returns an array of "groups" — each group is { base (+0), items: [upgrade tiers] }
+// base ALWAYS = the +0 tier — it is the source of truth for rarity, sorting, card styling.
+// Upgrade levels (+1..+10) affect STATS only, never classification.
 // Supports:
 //   A) current schema: group = { items: [tier0, tier1, ...] }
 //   B) future schema: item = { ...baseStats, upgrades: { "0": {...}, "1": {...}, ... } }
@@ -57,8 +60,8 @@ export function flattenToGroups(json, keys) {
       if (!g || typeof g !== "object") continue;
 
       if (Array.isArray(g.items) && g.items.length > 0) {
-        // Schema A: base = highest enchant (last tier)
-        const base = g.items[g.items.length - 1];
+        // Schema A: base = FIRST item (+0)
+        const base = g.items[0];
         groups.push({ sourceKey: key, base, items: g.items });
       } else if (g.upgrades && typeof g.upgrades === "object") {
         // Schema B: upgrades dict
@@ -67,7 +70,8 @@ export function flattenToGroups(json, keys) {
           .filter((n) => !Number.isNaN(n))
           .sort((a, b) => a - b);
         const items = levels.map((lvl) => ({ ...g, ...g.upgrades[String(lvl)] }));
-        const base = items[items.length - 1] || g;
+        // base = +0 (first level)
+        const base = items[0] || g;
         groups.push({ sourceKey: key, base, items });
       } else {
         // Schema C: flat

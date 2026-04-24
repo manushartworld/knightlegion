@@ -69,7 +69,7 @@ export default function ItemDetailModal({ group, onClose }) {
             <div className="px-6 pt-8 pb-5 flex flex-col items-center border-b border-[#D4AF37]/15 bg-gradient-to-b from-[#0b0b10] to-[#14090d]/60">
               <ItemIconTile item={current} size="lg" />
 
-              {/* +0 to +N selector — directly under the image */}
+              {/* +0 to +N selector — always single horizontal row, scrolls if needed */}
               {maxLevel > 0 && (
                 <div className="mt-5 w-full" data-testid="item-upgrade-selector">
                   <div className="flex items-center justify-between mb-2 px-1">
@@ -78,7 +78,7 @@ export default function ItemDetailModal({ group, onClose }) {
                       {maxLevel + 1} tiers
                     </span>
                   </div>
-                  <div className="flex flex-wrap gap-1.5 justify-center">
+                  <div className="flex gap-1.5 overflow-x-auto flex-nowrap scrollbar-thin pb-1 -mx-1 px-1 snap-x">
                     {items.map((_, i) => {
                       const active = i === safeLevel;
                       return (
@@ -86,7 +86,7 @@ export default function ItemDetailModal({ group, onClose }) {
                           key={i}
                           data-testid={`upgrade-level-${i}`}
                           onClick={() => setLevel(i)}
-                          className={`min-w-[42px] h-9 px-2 text-xs font-mono tracking-wider border transition-all ${
+                          className={`shrink-0 snap-start flex-none w-[42px] h-9 px-2 text-xs font-mono tracking-wider border transition-all ${
                             active
                               ? "bg-[#a83246] text-white border-[#D4AF37] shadow-[0_0_12px_rgba(168,50,70,0.7)]"
                               : "bg-[#14090d] border-[#D4AF37]/25 text-slate-300 hover:border-[#a83246] hover:text-[#D4AF37]"
