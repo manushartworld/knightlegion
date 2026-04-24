@@ -16,13 +16,14 @@ import {
   prettyLabel,
   isMeaningful,
   rarityTokens,
+  buildGradeBgUrl,
 } from "../lib/itemsHelpers";
 
 function ItemCard({ group, onOpen }) {
   const { base } = group;
   const gradeCls = GRADE_STYLES[base.itemGrade] || GRADE_STYLES.default;
   const tokens = rarityTokens(base.itemGrade);
-  // pick up to 2 meaningful primary stats for the card footer
+  const gradeBg = buildGradeBgUrl(base.itemGrade);
   const shownStats = PRIMARY_STATS.filter((k) => isMeaningful(base[k])).slice(0, 2);
   const gradeLabel =
     base.itemGrade === "Middle" ? "Mid Class"
@@ -30,13 +31,29 @@ function ItemCard({ group, onOpen }) {
     : base.itemGrade === "Low" ? "Low Class"
     : base.itemGrade || "";
 
+  // Rarity background: image from /images/itemgrades/{Grade}.jpg with CSS fallback gradient
+  // that matches the rarity token — so the card still looks alive even before artwork is uploaded.
+  const bgStyle = gradeBg
+    ? {
+        backgroundImage:
+          `linear-gradient(180deg, rgba(11,11,16,0.82) 0%, rgba(11,11,16,0.92) 100%), ` +
+          `radial-gradient(circle at 30% 10%, ${tokens.glow}, transparent 70%), ` +
+          `url(${gradeBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }
+    : {
+        backgroundImage: `radial-gradient(circle at 30% 10%, ${tokens.glow}, transparent 70%)`,
+      };
+
   return (
     <button
       onClick={() => onOpen(group)}
       data-testid={`item-card-${base.iconName || base.itemName}`}
       className="text-left group"
     >
-      <RPGFrame glow className="p-4 h-full flex flex-col gap-4">
+      <RPGFrame glow className="p-4 h-full flex flex-col gap-4" style={bgStyle}>
         <div className="flex gap-4 items-start">
           <ItemIconTile item={base} size="md" />
           <div className="min-w-0 flex-1">

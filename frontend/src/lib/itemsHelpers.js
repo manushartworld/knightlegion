@@ -33,6 +33,29 @@ export function rarityTokens(grade) {
   return GRADE_TOKENS[grade] || GRADE_TOKENS.default;
 }
 
+// ===== Asset path builders =====
+// All item artwork is loaded from /images/itemicons and /images/itemgrades.
+// The JSON's iconName is just a filename — no external URLs are used.
+
+export function buildIconUrl(iconName) {
+  if (!iconName) return null;
+  const name = String(iconName).trim();
+  if (!name) return null;
+  // Already absolute or rooted
+  if (name.startsWith("http://") || name.startsWith("https://")) return name;
+  if (name.startsWith("/")) return name;
+  // Ensure an extension — default to .png
+  const file = /\.[a-z0-9]{2,5}$/i.test(name) ? name : `${name}.png`;
+  return `/images/itemicons/${file}`;
+}
+
+// Rarity background mapping — Mid Class is stored as "Middle" in the JSON
+// and its file is Middle.jpg.
+export function buildGradeBgUrl(grade) {
+  if (!grade) return null;
+  return `/images/itemgrades/${grade}.jpg`;
+}
+
 // Maps Items sidebar subcategories to JSON top-level keys.
 // Shields are Weapon type (they're wielded, not worn), per the canonical RPG rules.
 export const ITEMS_SUB_TO_KEYS = {

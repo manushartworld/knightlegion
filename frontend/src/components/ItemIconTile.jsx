@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swords, Shield, Shirt, Gem, Flame, Sparkles, CircleHelp, Package } from "lucide-react";
-import { rarityTokens } from "../lib/itemsHelpers";
+import { rarityTokens, buildIconUrl } from "../lib/itemsHelpers";
 
 const TYPE_ICON = [
   { match: /axe|sword|club|mace|spear|bow|dagger|staff|lancer|talon|weapon/i, icon: Swords },
@@ -20,12 +20,22 @@ function pickIcon(name = "", iconName = "", type = "") {
   return CircleHelp;
 }
 
+const SIZE_PX = { xs: 40, sm: 56, md: 80, lg: 120 };
+const ICON_PX = { xs: 20, sm: 26, md: 34, lg: 52 };
+
 export default function ItemIconTile({ item, size = "md" }) {
+  const iconUrl = buildIconUrl(item?.iconName);
+  const [imgError, setImgError] = useState(false);
+
+  // Reset error state if iconName changes
+  useEffect(() => { setImgError(false); }, [iconUrl]);
+
   const Icon = pickIcon(item?.itemName, item?.iconName, item?.type);
   const t = rarityTokens(item?.itemGrade);
 
-  const px = size === "sm" ? 48 : size === "lg" ? 120 : 80;
-  const iconSize = size === "sm" ? 22 : size === "lg" ? 52 : 34;
+  const px = SIZE_PX[size] ?? SIZE_PX.md;
+  const iconSize = ICON_PX[size] ?? ICON_PX.md;
+  const showImage = iconUrl && !imgError;
 
   return (
     <div
@@ -43,7 +53,22 @@ export default function ItemIconTile({ item, size = "md" }) {
       <span className="absolute top-0 right-0 w-2 h-2 border-t border-r" style={{ borderColor: t.border }} />
       <span className="absolute bottom-0 left-0 w-2 h-2 border-b border-l" style={{ borderColor: t.border }} />
       <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r" style={{ borderColor: t.border }} />
-      <Icon size={iconSize} style={{ color: t.fg }} />
+      {showImage ? (
+        <img
+          src={iconUrl}
+          alt=""
+          onError={() => setImgError(true)}
+          onLoad={(e) => {
+            // Dev server returns 200 + HTML for missing files. Detect that: broken images
+            // have naturalWidth === 0.
+            if (!e.currentTarget.naturalWidth) setImgError(true);
+          }}
+          className="relative z-10 max-w-[82%] max-h-[82%] object-contain"
+          draggable={false}
+        />
+      ) : (
+        <Icon size={iconSize} style={{ color: t.fg, position: "relative", zIndex: 10 }} />
+      )}
     </div>
   );
 }

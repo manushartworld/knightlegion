@@ -65,9 +65,9 @@ export default function ItemDetailModal({ group, onClose }) {
           </button>
 
           <div className="overflow-y-auto">
-            {/* 1. Item preview: icon + upgrade selector grouped together */}
-            <div className="px-6 pt-8 pb-5 flex flex-col items-center border-b border-[#D4AF37]/15 bg-gradient-to-b from-[#0b0b10] to-[#14090d]/60">
-              <ItemIconTile item={current} size="lg" />
+            {/* 1. Item preview: compact icon + upgrade selector grouped together */}
+            <div className="px-6 pt-6 pb-5 flex flex-col items-center border-b border-[#D4AF37]/15 bg-gradient-to-b from-[#0b0b10] to-[#14090d]/60">
+              <ItemIconTile item={current} size="sm" />
 
               {/* +0 to +N selector — always single horizontal row, scrolls if needed */}
               {maxLevel > 0 && (
