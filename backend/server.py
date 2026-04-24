@@ -459,8 +459,17 @@ async def list_data_sources():
 
 
 @api_router.put("/data/{name}")
-async def put_data_json(name: str, file: UploadFile = File(...), user: dict = Depends(require_admin)):
-    """Admin-only: replace the JSON data source. Supports future character.json etc."""
+async def put_data_json(
+    name: str,
+    file: UploadFile = File(...),
+    mode: str = Query("overwrite", regex="^(overwrite|merge)$"),
+    user: dict = Depends(require_admin),
+):
+    """Admin-only: upload a JSON data source.
+    mode=overwrite  → replace the file entirely
+    mode=merge      → for each top-level key: if both arrays, concat; if both dicts, shallow-merge (new wins); else new replaces old.
+    Unknown top-level keys are kept.
+    """
     if not _NAME_RE.match(name):
         raise HTTPException(status_code=400, detail="invalid name")
     data = await file.read()
@@ -468,10 +477,51 @@ async def put_data_json(name: str, file: UploadFile = File(...), user: dict = De
         parsed = json.loads(data.decode("utf-8"))
     except Exception:
         raise HTTPException(status_code=400, detail="invalid JSON")
+
     p = DATA_DIR / f"{name}.json"
+    final = parsed
+    merged_stats = None
+
+    if mode == "merge" and p.exists():
+        try:
+            with open(p, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+            if isinstance(existing, dict) and isinstance(parsed, dict):
+                merged = dict(existing)
+                added_keys = 0
+                appended_rows = 0
+                for k, v in parsed.items():
+                    if k in merged:
+                        cur = merged[k]
+                        if isinstance(cur, list) and isinstance(v, list):
+                            merged[k] = cur + v
+                            appended_rows += len(v)
+                        elif isinstance(cur, dict) and isinstance(v, dict):
+                            merged[k] = {**cur, **v}
+                        else:
+                            merged[k] = v
+                    else:
+                        merged[k] = v
+                        added_keys += 1
+                final = merged
+                merged_stats = {"added_keys": added_keys, "appended_rows": appended_rows}
+            elif isinstance(existing, list) and isinstance(parsed, list):
+                final = existing + parsed
+                merged_stats = {"appended_rows": len(parsed)}
+            # else fall-through: overwrite
+        except Exception as e:
+            logging.error(f"merge failed, overwriting: {e}")
+
     with open(p, "w", encoding="utf-8") as f:
-        json.dump(parsed, f, ensure_ascii=False)
-    return {"ok": True, "name": name, "size": p.stat().st_size}
+        json.dump(final, f, ensure_ascii=False)
+
+    return {
+        "ok": True,
+        "name": name,
+        "mode": mode,
+        "size": p.stat().st_size,
+        "merged": merged_stats,
+    }
 
 
 @api_router.get("/")

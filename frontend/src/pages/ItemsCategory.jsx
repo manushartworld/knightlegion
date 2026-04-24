@@ -95,6 +95,18 @@ export default function ItemsCategory() {
 
   const keys = ITEMS_SUB_TO_KEYS[sub] || [];
 
+  // Contextual placeholder that reflects the active subcategory.
+  const searchPlaceholder = useMemo(() => {
+    const map = {
+      weapons: "Search weapons…",
+      armors: "Search armours…",
+      accessories: "Search accessories…",
+      skins: "Search skins…",
+      materials: "Search materials…",
+    };
+    return map[sub] || "Search the armoury…";
+  }, [sub]);
+
   const groups = useMemo(() => sortGroups(flattenToGroups(data, keys)), [data, keys]);
 
   // Derive filter options from data
@@ -177,7 +189,7 @@ export default function ItemsCategory() {
             data-testid="items-search"
             value={q}
             onChange={(e) => { setQ(e.target.value); setVisible(60); }}
-            placeholder="Search the armoury…"
+            placeholder={searchPlaceholder}
             className="w-full bg-[#14090d] border border-[#D4AF37]/30 pl-9 pr-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 focus:border-[#a83246] focus:outline-none"
           />
         </div>

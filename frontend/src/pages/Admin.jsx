@@ -4,6 +4,7 @@ import { Plus, Edit3, Trash2, Upload, Star, Save, X } from "lucide-react";
 import { api, mediaUrl } from "../lib/api";
 import { useAuth } from "../context/AuthContext";
 import RPGFrame from "../components/RPGFrame";
+import DataSourcesPanel from "../components/DataSourcesPanel";
 import { CATEGORIES } from "../lib/categories";
 import { toast } from "sonner";
 

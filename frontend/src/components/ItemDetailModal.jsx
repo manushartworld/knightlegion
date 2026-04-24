@@ -10,7 +10,6 @@ function formatValue(v) {
   return String(v);
 }
 
-// Compare two values for delta display (numeric only).
 function delta(curr, base) {
   const a = Number(curr);
   const b = Number(base);
@@ -21,11 +20,10 @@ function delta(curr, base) {
 }
 
 export default function ItemDetailModal({ group, onClose }) {
-  const [level, setLevel] = useState(0); // 0-indexed upgrade level
+  const [level, setLevel] = useState(0);
   const items = group?.items || [];
   const maxLevel = Math.max(0, items.length - 1);
 
-  // Clamp when opening a new group
   const safeLevel = Math.min(level, maxLevel);
   const current = items[safeLevel] || group?.base;
   const baseline = items[0] || group?.base;
@@ -36,6 +34,12 @@ export default function ItemDetailModal({ group, onClose }) {
   const grade = current.itemGrade || "";
   const gradeCls = GRADE_STYLES[grade] || GRADE_STYLES.default;
   const tokens = rarityTokens(grade);
+  const description = current.comment_en || current.description || "";
+  const gradeLabel =
+    grade === "Middle" ? "Mid Class"
+    : grade === "High" ? "High Class"
+    : grade === "Low" ? "Low Class"
+    : grade;
 
   return (
     <div
@@ -45,10 +49,10 @@ export default function ItemDetailModal({ group, onClose }) {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-2xl max-h-[92vh] overflow-hidden"
+        className="w-full max-w-xl max-h-[94vh] overflow-hidden"
       >
         <RPGFrame
-          className="relative flex flex-col max-h-[92vh]"
+          className="relative flex flex-col max-h-[94vh]"
           style={{ boxShadow: `0 0 0 1px ${tokens.border}, 0 0 40px ${tokens.glow}` }}
         >
           {/* Close */}
@@ -60,14 +64,49 @@ export default function ItemDetailModal({ group, onClose }) {
             <X size={16} />
           </button>
 
-          {/* Header */}
-          <div className="p-6 border-b border-[#D4AF37]/15 flex gap-4 items-center">
-            <ItemIconTile item={current} size="lg" />
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-3 flex-wrap">
-                {grade && (
+          <div className="overflow-y-auto">
+            {/* 1. Item preview: icon + upgrade selector grouped together */}
+            <div className="px-6 pt-8 pb-5 flex flex-col items-center border-b border-[#D4AF37]/15 bg-gradient-to-b from-[#0b0b10] to-[#14090d]/60">
+              <ItemIconTile item={current} size="lg" />
+
+              {/* +0 to +N selector — directly under the image */}
+              {maxLevel > 0 && (
+                <div className="mt-5 w-full" data-testid="item-upgrade-selector">
+                  <div className="flex items-center justify-between mb-2 px-1">
+                    <span className="text-[10px] tracking-[0.4em] uppercase text-[#D4AF37]">Enhancement</span>
+                    <span className="text-[10px] tracking-[0.3em] uppercase text-slate-500">
+                      {maxLevel + 1} tiers
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 justify-center">
+                    {items.map((_, i) => {
+                      const active = i === safeLevel;
+                      return (
+                        <button
+                          key={i}
+                          data-testid={`upgrade-level-${i}`}
+                          onClick={() => setLevel(i)}
+                          className={`min-w-[42px] h-9 px-2 text-xs font-mono tracking-wider border transition-all ${
+                            active
+                              ? "bg-[#a83246] text-white border-[#D4AF37] shadow-[0_0_12px_rgba(168,50,70,0.7)]"
+                              : "bg-[#14090d] border-[#D4AF37]/25 text-slate-300 hover:border-[#a83246] hover:text-[#D4AF37]"
+                          }`}
+                        >
+                          +{i}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 2. Name + rarity */}
+            <div className="px-6 pt-5 pb-4 text-center border-b border-[#D4AF37]/10">
+              <div className="flex items-center justify-center gap-3 flex-wrap">
+                {gradeLabel && (
                   <span className={`text-[10px] tracking-[0.3em] uppercase px-2 py-1 border ${gradeCls}`}>
-                    {grade === "Middle" ? "Mid Class" : grade === "High" ? "High Class" : grade === "Low" ? "Low Class" : grade}
+                    {gradeLabel}
                   </span>
                 )}
                 {current.type && (
@@ -77,12 +116,12 @@ export default function ItemDetailModal({ group, onClose }) {
                   <span className="text-[10px] tracking-[0.3em] uppercase text-slate-500">{current.hand}</span>
                 )}
                 {maxLevel > 0 && (
-                  <span className="ml-auto text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] border border-[#D4AF37]/40 px-2 py-1 bg-black/40">
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-[#D4AF37] border border-[#D4AF37]/40 px-2 py-1 bg-black/40">
                     +{safeLevel}
                   </span>
                 )}
               </div>
-              <h2 className={`font-heading text-2xl sm:text-3xl mt-2 truncate ${tokens.name}`}>
+              <h2 className={`font-heading text-2xl sm:text-3xl mt-3 ${tokens.name}`}>
                 {current.itemName}
               </h2>
               {current.permitted && (
@@ -91,10 +130,8 @@ export default function ItemDetailModal({ group, onClose }) {
                 </p>
               )}
             </div>
-          </div>
 
-          {/* Stat table — SINGLE column */}
-          <div className="flex-1 overflow-y-auto">
+            {/* 3. Stat table — single column */}
             <div className="px-6 py-5">
               <div className="text-[10px] tracking-[0.4em] uppercase text-slate-500 mb-3">
                 Stats · Level +{safeLevel}
@@ -128,43 +165,17 @@ export default function ItemDetailModal({ group, onClose }) {
                 </tbody>
               </table>
             </div>
-          </div>
 
-          {/* Upgrade selector */}
-          {maxLevel > 0 && (
-            <div className="px-6 py-4 border-t border-[#D4AF37]/15 bg-[#0b0b10]/80">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px] tracking-[0.4em] uppercase text-[#D4AF37]">
-                  Enhancement
-                </span>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-slate-500">
-                  {maxLevel + 1} tiers · 0 → {maxLevel}
-                </span>
+            {/* 4. Description */}
+            {description && (
+              <div className="px-6 pb-6">
+                <div className="text-[10px] tracking-[0.4em] uppercase text-slate-500 mb-2">Description</div>
+                <p className="text-sm text-slate-300 leading-relaxed italic">
+                  {description}
+                </p>
               </div>
-              <div
-                data-testid="item-upgrade-selector"
-                className="flex flex-wrap gap-1.5"
-              >
-                {items.map((_, i) => {
-                  const active = i === safeLevel;
-                  return (
-                    <button
-                      key={i}
-                      data-testid={`upgrade-level-${i}`}
-                      onClick={() => setLevel(i)}
-                      className={`min-w-[44px] h-9 px-2 text-xs font-mono tracking-wider border transition-all ${
-                        active
-                          ? "bg-[#a83246] text-white border-[#D4AF37] shadow-[0_0_12px_rgba(168,50,70,0.7)]"
-                          : "bg-[#14090d] border-[#D4AF37]/25 text-slate-300 hover:border-[#a83246] hover:text-[#D4AF37]"
-                      }`}
-                    >
-                      +{i}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </RPGFrame>
       </div>
     </div>
