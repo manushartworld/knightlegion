@@ -143,8 +143,8 @@
     },
     {
       "id": "com.manushart.knightlegion.pr03", "set": 2, "curVip": 0, "curBas": 0,
-      "begunTime": "2026-04-12 09:00:00", 
-      "endTime": "2027-04-15 18:03:59",
+      "begunTime": "", 
+      "endTime": "",
       "isActive": true,
       "items": [
         {
