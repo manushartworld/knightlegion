@@ -100,9 +100,9 @@
     
     {
       "id": "com.manushart.knightlegion.pr02", "set": 2, "curVip": 0, "curBas": 0,
-      "begunTime": "", 
       "begunTime": "2026-04-12 09:00:00", 
       "endTime": "2027-04-15 18:03:59",
+      "isActive": true,
       "items": [
         {
           "id": 487,
