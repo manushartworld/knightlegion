@@ -3,8 +3,8 @@
     {
       "id": "com.manushart.knightlegion.curvip04", 
       "set": 0, "curVip": 50000, "curBas": 0,
-      "begunTime": "2026-04-12 09:00:00", 
-      "endTime": "2027-04-15 18:03:59",
+      "begunTime": "", 
+      "endTime": "",
       "isActive": true,
       "items": []
     },
