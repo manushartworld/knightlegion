@@ -1,1 +1,10 @@
-
+[
+  {
+    "id": "tuten",
+    "url": "https://cdn.site.com/videos/tuten.mp4"
+  },
+  {
+    "id": "tuttr",
+    "url": "https://cdn.site.com/videos/tuttr.mp4"
+  }
+]
