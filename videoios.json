@@ -1,5 +1,6 @@
-[
-  {
+{
+  "videoDatas": [
+    {
     "id": "tuten",
     "sizeMb": 14.77,
     "url": "https://patchs.knightcombatonline.com/videos/tuten.mp4"
@@ -9,4 +10,5 @@
     "sizeMb": 14.77,
     "url": "https://patchs.knightcombatonline.com/videos/tuttr.mp4"
   }
-]
+  ]
+}
