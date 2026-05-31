@@ -17,6 +17,24 @@
           "url": "https://patchs.knightcombatonline.com/videos/tuten.mp4"
         }
       ]
+    },
+    {
+      "datas": [
+        {
+          "tabName": "Test TR",
+          "language": "tr",
+          "videoName": "testtr",
+          "sizeMb": 4.83,
+          "url": "https://patchs.knightcombatonline.com/videos/testtr.mp4"
+        },
+        {
+          "tabName": "Test EN",
+          "language": "en",
+          "videoName": "testen",
+          "sizeMb": 4.83,
+          "url": "https://patchs.knightcombatonline.com/videos/testen.mp4"
+        }
+      ]
     }
   ]
 }
