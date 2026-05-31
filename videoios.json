@@ -5,14 +5,14 @@
         {
           "tabName": "Tam Rehber",
           "language": "tr",
-          "name": "tuttr",
+          "videoName": "tuttr",
           "sizeMb": 14.77,
           "url": "https://patchs.knightcombatonline.com/videos/tuttr.mp4"
         },
         {
           "tabName": "Full Tutorial",
           "language": "en",
-          "name": "tuten",
+          "videoName": "tuten",
           "sizeMb": 14.77,
           "url": "https://patchs.knightcombatonline.com/videos/tuten.mp4"
         }
