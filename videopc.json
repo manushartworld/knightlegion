@@ -1,12 +1,22 @@
-[
-  {
-    "id": "tuten",
-    "sizeMb": 30.5,
-    "url": "https://cdn.site.com/videos/tuten.mp4"
-  },
-  {
-    "id": "tuttr",
-    "sizeMb": 30.5,
-    "url": "https://cdn.site.com/videos/tuttr.mp4"
-  }
-]
+{
+  "videoDatas": [
+    {
+      "datas": [
+        {
+          "tabName": “Tam Rehber”,
+          "language": “tr”,
+          "videoName": “tuttr”,
+          "sizeMb": 14.77,
+          "url": "https://patchs.knightcombatonline.com/videos/tuttr.mp4"
+        },
+	{
+          "tabName": “Full Tutorial”,
+          "language": “en”,
+          "videoName": “tuten”,
+          "sizeMb": 14.77,
+          "url": "https://patchs.knightcombatonline.com/videos/tuten.mp4"
+        }
+      ]
+    }
+  ]
+}
