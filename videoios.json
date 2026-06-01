@@ -3,36 +3,90 @@
     {
       "datas": [
         {
-          "tabName": "Tam Rehber",
+          "tabName": "Askerler",
           "language": "tr",
-          "videoName": "tuttr",
-          "sizeMb": 14.77,
-          "url": "https://patchs.knightcombatonline.com/videos/tuttr.mp4"
+          "videoName": "trsoldiers",
+          "sizeMb": 15.61,
+          "url": "https://patchs.knightcombatonline.com/videos/tr/trsoldiers.mp4"
         },
         {
-          "tabName": "Full Tutorial",
+          "tabName": "Soldiers",
           "language": "en",
-          "videoName": "tuten",
-          "sizeMb": 14.77,
-          "url": "https://patchs.knightcombatonline.com/videos/tuten.mp4"
+          "videoName": "ensoldiers",
+          "sizeMb": 16.06,
+          "url": "https://patchs.knightcombatonline.com/videos/en/ensoldiers.mp4"
         }
       ]
     },
     {
       "datas": [
         {
-          "tabName": "Test TR",
+          "tabName": "Kahramanlar",
           "language": "tr",
-          "videoName": "testtr",
-          "sizeMb": 255.95,
-          "url": "https://patchs.knightcombatonline.com/videos/testtr.mp4"
+          "videoName": "trhero",
+          "sizeMb": 17.59,
+          "url": "https://patchs.knightcombatonline.com/videos/tr/trhero.mp4"
         },
         {
-          "tabName": "Test EN 3",
+          "tabName": "Heroes",
           "language": "en",
-          "videoName": "testen2",
-          "sizeMb": 255.95,
-          "url": "https://patchs.knightcombatonline.com/videos/testen2.mp4"
+          "videoName": "enhero",
+          "sizeMb": 18.4,
+          "url": "https://patchs.knightcombatonline.com/videos/en/enhero.mp4"
+        }
+      ]
+    },
+    {
+      "datas": [
+        {
+          "tabName": "Yükseltme",
+          "language": "tr",
+          "videoName": "trupgrade",
+          "sizeMb": 3.17,
+          "url": "https://patchs.knightcombatonline.com/videos/tr/trupgrade.mp4"
+        },
+        {
+          "tabName": "Upgrade",
+          "language": "en",
+          "videoName": "enupgrade",
+          "sizeMb": 3.12,
+          "url": "https://patchs.knightcombatonline.com/videos/en/enupgrade.mp4"
+        }
+      ]
+    },
+    {
+      "datas": [
+        {
+          "tabName": "Üretim",
+          "language": "tr",
+          "videoName": "trcraft",
+          "sizeMb": 5.07,
+          "url": "https://patchs.knightcombatonline.com/videos/tr/trcraft.mp4"
+        },
+        {
+          "tabName": "Crafting",
+          "language": "en",
+          "videoName": "encraft",
+          "sizeMb": 4.96,
+          "url": "https://patchs.knightcombatonline.com/videos/en/encraft.mp4"
+        }
+      ]
+    },
+    {
+      "datas": [
+        {
+          "tabName": "Haritalar",
+          "language": "tr",
+          "videoName": "trmap",
+          "sizeMb": 10.38,
+          "url": "https://patchs.knightcombatonline.com/videos/tr/trmap.mp4"
+        },
+        {
+          "tabName": "Maps",
+          "language": "en",
+          "videoName": "enmap",
+          "sizeMb": 10.51,
+          "url": "https://patchs.knightcombatonline.com/videos/en/enmap.mp4"
         }
       ]
     }
