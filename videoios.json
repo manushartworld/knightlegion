@@ -6,14 +6,14 @@
           "tabName": "Askerler",
           "language": "tr",
           "videoName": "trsoldiers",
-          "sizeMb": 15.61,
+          "sizeMb": 15.05,
           "url": "https://patchs.knightcombatonline.com/videos/tr/trsoldiers.mp4"
         },
         {
           "tabName": "Soldiers",
           "language": "en",
           "videoName": "ensoldiers",
-          "sizeMb": 9.08,
+          "sizeMb": 11.94,
           "url": "https://patchs.knightcombatonline.com/videos/en/ensoldiers.mp4"
         }
       ]
@@ -24,14 +24,14 @@
           "tabName": "Kahramanlar",
           "language": "tr",
           "videoName": "trhero",
-          "sizeMb": 17.59,
+          "sizeMb": 17.79,
           "url": "https://patchs.knightcombatonline.com/videos/tr/trhero.mp4"
         },
         {
           "tabName": "Heroes",
           "language": "en",
           "videoName": "enhero",
-          "sizeMb": 18.4,
+          "sizeMb": 18.72,
           "url": "https://patchs.knightcombatonline.com/videos/en/enhero.mp4"
         }
       ]
@@ -42,14 +42,14 @@
           "tabName": "Yükseltme",
           "language": "tr",
           "videoName": "trupgrade",
-          "sizeMb": 3.17,
+          "sizeMb": 3.26,
           "url": "https://patchs.knightcombatonline.com/videos/tr/trupgrade.mp4"
         },
         {
           "tabName": "Upgrade",
           "language": "en",
           "videoName": "enupgrade",
-          "sizeMb": 3.12,
+          "sizeMb": 3.2,
           "url": "https://patchs.knightcombatonline.com/videos/en/enupgrade.mp4"
         }
       ]
@@ -60,14 +60,14 @@
           "tabName": "Üretim",
           "language": "tr",
           "videoName": "trcraft",
-          "sizeMb": 5.07,
+          "sizeMb": 4.95,
           "url": "https://patchs.knightcombatonline.com/videos/tr/trcraft.mp4"
         },
         {
           "tabName": "Crafting",
           "language": "en",
           "videoName": "encraft",
-          "sizeMb": 4.96,
+          "sizeMb": 4.91,
           "url": "https://patchs.knightcombatonline.com/videos/en/encraft.mp4"
         }
       ]
@@ -78,14 +78,14 @@
           "tabName": "Haritalar",
           "language": "tr",
           "videoName": "trmap",
-          "sizeMb": 10.38,
+          "sizeMb": 12.38,
           "url": "https://patchs.knightcombatonline.com/videos/tr/trmap.mp4"
         },
         {
           "tabName": "Maps",
           "language": "en",
           "videoName": "enmap",
-          "sizeMb": 10.51,
+          "sizeMb": 12.37,
           "url": "https://patchs.knightcombatonline.com/videos/en/enmap.mp4"
         }
       ]
