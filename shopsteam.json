@@ -73,27 +73,27 @@
       "items": [
         {
           "id": 618,
-          "amount": 5,
-          "enchantLevel": 0
-        },
-        {
-          "id": 617,
           "amount": 10,
           "enchantLevel": 0
         },
         {
-          "id": 616,
+          "id": 617,
           "amount": 20,
           "enchantLevel": 0
         },
         {
+          "id": 616,
+          "amount": 40,
+          "enchantLevel": 0
+        },
+        {
           "id": 255,
-          "amount": 25,
+          "amount": 50,
           "enchantLevel": 0
         },
         {
           "id": 254,
-          "amount": 30,
+          "amount": 60,
           "enchantLevel": 0
         }
       ]
@@ -108,37 +108,37 @@
       "items": [
         {
           "id": 487,
-          "amount": 30,
+          "amount": 50,
           "enchantLevel": 0
         },
         {
           "id": 504,
-          "amount": 30,
+          "amount": 50,
           "enchantLevel": 0
         },
         {
           "id": 481,
-          "amount": 30,
+          "amount": 50,
           "enchantLevel": 0
         },
         {
           "id": 489,
-          "amount": 15,
+          "amount": 25,
           "enchantLevel": 0
         },
         {
           "id": 424,
-          "amount": 15,
+          "amount": 25,
           "enchantLevel": 0
         },
         {
           "id": 511,
-          "amount": 15,
+          "amount": 25,
           "enchantLevel": 0
         },
         {
           "id": 611,
-          "amount": 15,
+          "amount": 25,
           "enchantLevel": 0
         }
       ]
@@ -152,22 +152,22 @@
       "items": [
         {
           "id": 541,
-          "amount": 400,
+          "amount": 600,
           "enchantLevel": 0
         },
         {
           "id": 539,
-          "amount": 300,
+          "amount": 450,
           "enchantLevel": 0
         },
         {
           "id": 519,
-          "amount": 200,
+          "amount": 300,
           "enchantLevel": 0
         },
         {
           "id": 420,
-          "amount": 200,
+          "amount": 300,
           "enchantLevel": 0
         }
       ]
