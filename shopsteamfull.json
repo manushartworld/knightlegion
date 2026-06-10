@@ -1,1 +1,176 @@
-
+{
+  "datas": [
+    {
+      "id": "101", 
+      "set": 0, "curVip": 50000, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "102", 
+      "set": 0, "curVip": 20000, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "103", 
+      "set": 0, "curVip": 8000, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "104", 
+      "set": 0, "curVip": 3000, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "105", 
+      "set": 1, "curVip": 0, "curBas": 250000000,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "106", 
+      "set": 1, "curVip": 0, "curBas": 100000000,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "107", 
+      "set": 1, "curVip": 0, "curBas": 40000000,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "108", 
+      "set": 1, "curVip": 0, "curBas": 15000000,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": []
+    },
+    {
+      "id": "109", 
+      "set": 2, "curVip": 0, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": [
+        {
+          "id": 618,
+          "amount": 10,
+          "enchantLevel": 0
+        },
+        {
+          "id": 617,
+          "amount": 20,
+          "enchantLevel": 0
+        },
+        {
+          "id": 616,
+          "amount": 40,
+          "enchantLevel": 0
+        },
+        {
+          "id": 255,
+          "amount": 50,
+          "enchantLevel": 0
+        },
+        {
+          "id": 254,
+          "amount": 60,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    
+    {
+      "id": "110", 
+      "set": 2, "curVip": 0, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": [
+        {
+          "id": 487,
+          "amount": 50,
+          "enchantLevel": 0
+        },
+        {
+          "id": 504,
+          "amount": 50,
+          "enchantLevel": 0
+        },
+        {
+          "id": 481,
+          "amount": 50,
+          "enchantLevel": 0
+        },
+        {
+          "id": 489,
+          "amount": 25,
+          "enchantLevel": 0
+        },
+        {
+          "id": 424,
+          "amount": 25,
+          "enchantLevel": 0
+        },
+        {
+          "id": 511,
+          "amount": 25,
+          "enchantLevel": 0
+        },
+        {
+          "id": 611,
+          "amount": 25,
+          "enchantLevel": 0
+        }
+      ]
+    },
+    {
+      "id": "111", 
+      "set": 2, "curVip": 0, "curBas": 0,
+      "begunTime": "", 
+      "endTime": "",
+      "isActive": true,
+      "items": [
+        {
+          "id": 541,
+          "amount": 600,
+          "enchantLevel": 0
+        },
+        {
+          "id": 539,
+          "amount": 450,
+          "enchantLevel": 0
+        },
+        {
+          "id": 519,
+          "amount": 300,
+          "enchantLevel": 0
+        },
+        {
+          "id": 420,
+          "amount": 300,
+          "enchantLevel": 0
+        }
+      ]
+    }
+  ]
+}
