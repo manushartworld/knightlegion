@@ -5,7 +5,7 @@
       "set": 0, "curVip": 50000, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": []
     },
     {
@@ -13,7 +13,7 @@
       "set": 0, "curVip": 20000, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": []
     },
     {
@@ -21,7 +21,7 @@
       "set": 0, "curVip": 8000, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": []
     },
     {
@@ -29,7 +29,7 @@
       "set": 0, "curVip": 3000, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": []
     },
     {
@@ -37,7 +37,7 @@
       "set": 1, "curVip": 0, "curBas": 250000000,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": []
     },
     {
@@ -45,7 +45,7 @@
       "set": 1, "curVip": 0, "curBas": 100000000,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": []
     },
     {
@@ -53,7 +53,7 @@
       "set": 1, "curVip": 0, "curBas": 40000000,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": []
     },
     {
@@ -61,7 +61,7 @@
       "set": 1, "curVip": 0, "curBas": 15000000,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": []
     },
     {
@@ -69,7 +69,7 @@
       "set": 2, "curVip": 0, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": [
         {
           "id": 618,
@@ -104,7 +104,7 @@
       "set": 2, "curVip": 0, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": [
         {
           "id": 487,
@@ -148,7 +148,7 @@
       "set": 2, "curVip": 0, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
-      "isActive": true,
+      "isActive": false,
       "items": [
         {
           "id": 541,
