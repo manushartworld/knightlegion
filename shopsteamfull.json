@@ -13,13 +13,48 @@
       "nameTr": "Efsanevi Diamora Hazinesi",
       "descEn": "Command a vast wealth. Enhance your heroes and strengthen your army with this massive hoard.",
       "descTr": "Büyük bir servete hükmet. Bu devasa hazine ile kahramanlarını geliştir ve ordunu güçlendir.",
-      "prices": {
-        "TR": { "amount": 250, "currency": "TRY" },
-        "DE": { "amount": 700,  "currency": "EUR" },
-        "GB": { "amount": 600,  "currency": "GBP" },
-        "US": { "amount": 800,  "currency": "USD" },
-        "default": { "amount": 800, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 25000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 700,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     {
       "id": "curvip03", 
@@ -32,13 +67,48 @@
       "nameTr": "Üstadın Diamora Sandığı",
       "descEn": "Resources a leader needs are right here. Equip your heroes and prepare your army for battle.",
       "descTr": "Bir liderin ihtiyaç duyacağı kaynaklar burada. Kahramanlarını kuşat ve ordunu savaşa hazırla.",
-      "prices": {
-        "TR": { "amount": 200, "currency": "TRY" },
-        "DE": { "amount": 600,  "currency": "EUR" },
-        "GB": { "amount": 550,  "currency": "GBP" },
-        "US": { "amount": 700,  "currency": "USD" },
-        "default": { "amount": 700, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 20000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 550,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 700,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 700,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     {
       "id": "curvip02", 
@@ -50,13 +120,48 @@
       "nameTr": "Seçkin Diamora Kesesi",
       "descEn": "Gain an advantage in your adventure. Develop your heroes' skills and provide support to your army.",
       "descTr": "Maceranda avantaj elde et. Kahramanlarının yeteneklerini geliştir ve orduna destek sağla.",
-      "prices": {
-        "TR": { "amount": 150, "currency": "TRY" },
-        "DE": { "amount": 500,  "currency": "EUR" },
-        "GB": { "amount": 450,  "currency": "GBP" },
-        "US": { "amount": 600,  "currency": "USD" },
-        "default": { "amount": 600, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 15000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 500,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 450,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     {
       "id": "curvip01", 
@@ -67,15 +172,50 @@
       "items": [],
       "nameEn": "Heroic Diamora Bundle",
       "nameTr": "Kahraman Diamora Paketi",
-      "descEn": "Start your journey. Meet your heroes' needs and grow your army."",
+      "descEn": "Start your journey. Meet your heroes' needs and grow your army.",
       "descTr": "Yolculuğuna başlangıç yap. Kahramanlarının ihtiyaçlarını karşıla ve ordunu büyüt.",
-      "prices": {
-        "TR": { "amount": 100, "currency": "TRY" },
-        "DE": { "amount": 400,  "currency": "EUR" },
-        "GB": { "amount": 350,  "currency": "GBP" },
-        "US": { "amount": 500,  "currency": "USD" },
-        "default": { "amount": 500, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 10000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 400,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 350,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 500,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 500,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     {
       "id": "curbas04", 
@@ -86,15 +226,50 @@
       "items": [],
       "nameEn": "Legendary Lyra Hoard",
       "nameTr": "Efsanevi Lyra Hazinesi",
-      "descEn": "Büyük bir servete hükmet. Bu devasa hazine ile kahramanlarını geliştir ve ordunu güçlendir.",
-      "descTr": "Command a vast wealth. Enhance your heroes and strengthen your army with this massive hoard.",
-      "prices": {
-        "TR": { "amount": 250, "currency": "TRY" },
-        "DE": { "amount": 700,  "currency": "EUR" },
-        "GB": { "amount": 600,  "currency": "GBP" },
-        "US": { "amount": 800,  "currency": "USD" },
-        "default": { "amount": 800, "currency": "USD" }
-      }
+      "descEn": "Command a vast wealth. Enhance your heroes and strengthen your army with this massive hoard.",
+      "descTr": "Büyük bir servete hükmet. Bu devasa hazine ile kahramanlarını geliştir ve ordunu güçlendir.",
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 25000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 700,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     {
       "id": "curbas03", 
@@ -105,15 +280,50 @@
       "items": [],
       "nameEn": "Master's Lyra Chest",
       "nameTr": "Üstadın Lyra Sandığı",
-      "descEn": "Resources a leader needs are right here. Equip your heroes and prepare your army for battle."",
+      "descEn": "Resources a leader needs are right here. Equip your heroes and prepare your army for battle.",
       "descTr": "Bir liderin ihtiyaç duyacağı kaynaklar burada. Kahramanlarını kuşat ve ordunu savaşa hazırla.",
-      "prices": {
-        "TR": { "amount": 200, "currency": "TRY" },
-        "DE": { "amount": 600,  "currency": "EUR" },
-        "GB": { "amount": 550,  "currency": "GBP" },
-        "US": { "amount": 700,  "currency": "USD" },
-        "default": { "amount": 700, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 20000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 550,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 700,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 700,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     {
       "id": "curbas02", 
@@ -128,13 +338,48 @@
       "nameTr": "Seçkin Lyra Kesesi",
       "descEn": "Gain an advantage in your adventure. Develop your heroes' skills and provide support to your army.",
       "descTr": "Maceranda avantaj elde et. Kahramanlarının yeteneklerini geliştir ve orduna destek sağla.",
-      "prices": {
-        "TR": { "amount": 150, "currency": "TRY" },
-        "DE": { "amount": 500,  "currency": "EUR" },
-        "GB": { "amount": 450,  "currency": "GBP" },
-        "US": { "amount": 600,  "currency": "USD" },
-        "default": { "amount": 600, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 15000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 500,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 450,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     {
       "id": "curbas01", 
@@ -147,13 +392,48 @@
       "nameTr": "Kahraman Lyra Paketi",
       "descEn": "Start your journey. Meet your heroes' needs and grow your army.",
       "descTr": "Yolculuğuna başlangıç yap. Kahramanlarının ihtiyaçlarını karşıla ve ordunu büyüt.",
-      "prices": {
-        "TR": { "amount": 100, "currency": "TRY" },
-        "DE": { "amount": 400,  "currency": "EUR" },
-        "GB": { "amount": 350,  "currency": "GBP" },
-        "US": { "amount": 500,  "currency": "USD" },
-        "default": { "amount": 500, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 10000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 400,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 350,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 500,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 500,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     {
       "id": "pr01", 
@@ -192,13 +472,48 @@
       "nameTr": "Üstadın Gelişim Parşömenleri",
       "descEn": "Obtain the scrolls needed to level up the units in your army. Strengthen your army and prepare your heroes for battle.",
       "descTr": "Ordundaki birimlerin seviyelerini yükseltmek için gereken parşömenlere sahip ol. Ordunu güçlendir ve kahramanlarını savaşa hazırla.",
-      "prices": {
-        "TR": { "amount": 100, "currency": "TRY" },
-        "DE": { "amount": 400,  "currency": "EUR" },
-        "GB": { "amount": 350,  "currency": "GBP" },
-        "US": { "amount": 500,  "currency": "USD" },
-        "default": { "amount": 500, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 25000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 700,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     
     {
@@ -248,13 +563,48 @@
       "nameTr": "Üstadın Zanaat Sandığı",
       "descEn": "Obtain the materials needed to craft new items. Enhance your heroes and prepare your army for battle.",
       "descTr": "Yeni eşyalar üretmek için gereken materyallere sahip ol. Kahramanlarını güçlendir ve ordunu savaşa hazırla.",
-      "prices": {
-        "TR": { "amount": 100, "currency": "TRY" },
-        "DE": { "amount": 400,  "currency": "EUR" },
-        "GB": { "amount": 350,  "currency": "GBP" },
-        "US": { "amount": 500,  "currency": "USD" },
-        "default": { "amount": 500, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 25000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 700,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        }
+      ]
     },
     {
       "id": "pr03", "set": 2, "curVip": 0, "curBas": 0,
@@ -287,13 +637,48 @@
       "nameTr": "Üstadın Gelişim Sandığı",
       "descEn": "Obtain the materials needed to strengthen your equipment. Prepare your heroes for battle and add power to your army.",
       "descTr": "Ekipmanlarını güçlendirmek için gereken materyallere sahip ol. Kahramanlarını savaşa hazırla ve orduna güç kat.",
-      "prices": {
-        "TR": { "amount": 100, "currency": "TRY" },
-        "DE": { "amount": 400,  "currency": "EUR" },
-        "GB": { "amount": 350,  "currency": "GBP" },
-        "US": { "amount": 500,  "currency": "USD" },
-        "default": { "amount": 500, "currency": "USD" }
-      }
+      "prices": [
+        {
+          "country": "TR",
+          "priceDetail": 
+          {
+            "amount": 25000,
+            "currency": "TRY"
+          }
+        },
+        {
+          "country": "DE",
+          "priceDetail": 
+          {
+            "amount": 700,
+            "currency": "EUR"
+          }
+        },
+        {
+          "country": "GB",
+          "priceDetail": 
+          {
+            "amount": 600,
+            "currency": "GBP"
+          }
+        },
+        {
+          "country": "US",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        },
+        {
+          "country": "default",
+          "priceDetail": 
+          {
+            "amount": 800,
+            "currency": "USD"
+          }
+        }
+      ]
     }
   ]
 }
