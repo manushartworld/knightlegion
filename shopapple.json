@@ -1,7 +1,7 @@
 {
   "datas": [
     {
-      "id": "com.manushart.knightlegion.curvip04", 
+      "id": "com.manushart.knightlegion.curvip04b", 
       "set": 0, "curVip": 50000, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
@@ -9,7 +9,7 @@
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.curvip03", 
+      "id": "com.manushart.knightlegion.curvip03b", 
       "set": 0, "curVip": 20000, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
@@ -17,7 +17,7 @@
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.curvip02", 
+      "id": "com.manushart.knightlegion.curvip02b", 
       "set": 0, "curVip": 8000, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
@@ -25,7 +25,7 @@
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.curvip01", 
+      "id": "com.manushart.knightlegion.curvip01b", 
       "set": 0, "curVip": 3000, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
@@ -33,7 +33,7 @@
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.curbas04", 
+      "id": "com.manushart.knightlegion.curbas04b", 
       "set": 1, "curVip": 0, "curBas": 250000000,
       "begunTime": "", 
       "endTime": "",
@@ -41,7 +41,7 @@
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.curbas03", 
+      "id": "com.manushart.knightlegion.curbas03b", 
       "set": 1, "curVip": 0, "curBas": 100000000,
       "begunTime": "", 
       "endTime": "",
@@ -49,7 +49,7 @@
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.curbas02", 
+      "id": "com.manushart.knightlegion.curbas02c", 
       "set": 1, "curVip": 0, "curBas": 40000000,
       "begunTime": "", 
       "endTime": "",
@@ -57,7 +57,7 @@
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.curbas01", 
+      "id": "com.manushart.knightlegion.curbas01b", 
       "set": 1, "curVip": 0, "curBas": 15000000,
       "begunTime": "", 
       "endTime": "",
@@ -65,7 +65,7 @@
       "items": []
     },
     {
-      "id": "com.manushart.knightlegion.pr01", "set": 2, "curVip": 0, "curBas": 0,
+      "id": "com.manushart.knightlegion.pr01b", "set": 2, "curVip": 0, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
       "isActive": true,
@@ -99,7 +99,7 @@
     },
     
     {
-      "id": "com.manushart.knightlegion.pr02", "set": 2, "curVip": 0, "curBas": 0,
+      "id": "com.manushart.knightlegion.pr02b", "set": 2, "curVip": 0, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
       "isActive": true,
@@ -142,7 +142,7 @@
       ]
     },
     {
-      "id": "com.manushart.knightlegion.pr03", "set": 2, "curVip": 0, "curBas": 0,
+      "id": "com.manushart.knightlegion.pr03b", "set": 2, "curVip": 0, "curBas": 0,
       "begunTime": "", 
       "endTime": "",
       "isActive": true,
